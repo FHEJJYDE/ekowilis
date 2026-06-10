@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 import { SiteLayout } from "@/components/site-layout";
-import { projects } from "@/content/projects";
+import { projects, type Project } from "@/content/projects";
 
 export const Route = createFileRoute("/portfolio/$slug")({
   loader: ({ params }) => {
@@ -46,7 +46,7 @@ export const Route = createFileRoute("/portfolio/$slug")({
 });
 
 function ProjectPage() {
-  const { project: p } = Route.useLoaderData();
+  const { project: p } = Route.useLoaderData() as { project: Project };
   return (
     <SiteLayout>
       <section className="border-b border-border bg-secondary/40">
