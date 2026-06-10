@@ -1,0 +1,17 @@
+export const clients = [
+  "Enugu State Government",
+  "Rivers State Government",
+  "Akwa Ibom State Government",
+  "Federal Road Maintenance Agency (FERMA)",
+  "Niger Delta Development Commission (NDDC)",
+  "Nigerian Navy",
+  "Agip Nigeria Limited",
+  "Orascom — Tinapa",
+  "Prodeco Nigeria Limited",
+  "Private Estate W.A. Ltd",
+  "Wilson Nigeria Ltd",
+  "Ferotex Construction Company",
+  "Peace Mass Transit Ltd",
+  "ESHDC",
+  "ESUBEB",
+];
