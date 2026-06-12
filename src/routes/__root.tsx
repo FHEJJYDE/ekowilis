@@ -80,10 +80,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "EKOWILLS Logistics & Engineering Ltd — Civil Engineering, Nigeria" },
       { name: "description", content: "Nigerian civil engineering, road construction, drainage, building & equipment leasing company based in Enugu. Engineering with style since 2003." },
       { name: "author", content: "EKOWILLS Logistics & Engineering Ltd" },
-      { property: "og:title", content: "EKOWILLS Logistics & Engineering Ltd" },
-      { property: "og:description", content: "Civil engineering, roads, drainage and building construction across Nigeria." },
+      { property: "og:title", content: "EKOWILLS Logistics & Engineering Ltd — Civil Engineering, Nigeria" },
+      { property: "og:description", content: "Nigerian civil engineering, road construction, drainage, building & equipment leasing company based in Enugu. Engineering with style since 2003." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "EKOWILLS Logistics & Engineering Ltd — Civil Engineering, Nigeria" },
+      { name: "twitter:description", content: "Nigerian civil engineering, road construction, drainage, building & equipment leasing company based in Enugu. Engineering with style since 2003." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/add6ee21-398f-47c3-ad3c-e9ab68bdd0a0/id-preview-3e34298b--83a28ff6-014c-471e-b494-3b7c62a4e06c.lovable.app-1781295922381.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/add6ee21-398f-47c3-ad3c-e9ab68bdd0a0/id-preview-3e34298b--83a28ff6-014c-471e-b494-3b7c62a4e06c.lovable.app-1781295922381.png" },
     ],
     links: [
       {
