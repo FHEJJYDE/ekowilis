@@ -17,9 +17,21 @@ import { Route as EquipmentRouteImport } from './routes/equipment'
 import { Route as CredentialsRouteImport } from './routes/credentials'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ClientsRouteImport } from './routes/clients'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
+import { Route as AdminTeamRouteImport } from './routes/admin.team'
+import { Route as AdminSubmissionsRouteImport } from './routes/admin.submissions'
+import { Route as AdminServicesRouteImport } from './routes/admin.services'
+import { Route as AdminProjectsRouteImport } from './routes/admin.projects'
+import { Route as AdminMediaRouteImport } from './routes/admin.media'
+import { Route as AdminHeroRouteImport } from './routes/admin.hero'
+import { Route as AdminEquipmentRouteImport } from './routes/admin.equipment'
+import { Route as AdminCredentialsRouteImport } from './routes/admin.credentials'
+import { Route as AdminCompanyRouteImport } from './routes/admin.company'
+import { Route as AdminClientsRouteImport } from './routes/admin.clients'
 
 const StaffAccessRoute = StaffAccessRouteImport.update({
   id: '/staff-access',
@@ -61,6 +73,11 @@ const ClientsRoute = ClientsRouteImport.update({
   path: '/clients',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -71,15 +88,71 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AdminRoute,
+} as any)
 const PortfolioSlugRoute = PortfolioSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
   getParentRoute: () => PortfolioRoute,
 } as any)
+const AdminTeamRoute = AdminTeamRouteImport.update({
+  id: '/team',
+  path: '/team',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminSubmissionsRoute = AdminSubmissionsRouteImport.update({
+  id: '/submissions',
+  path: '/submissions',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminServicesRoute = AdminServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminProjectsRoute = AdminProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminMediaRoute = AdminMediaRouteImport.update({
+  id: '/media',
+  path: '/media',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminHeroRoute = AdminHeroRouteImport.update({
+  id: '/hero',
+  path: '/hero',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminEquipmentRoute = AdminEquipmentRouteImport.update({
+  id: '/equipment',
+  path: '/equipment',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminCredentialsRoute = AdminCredentialsRouteImport.update({
+  id: '/credentials',
+  path: '/credentials',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminCompanyRoute = AdminCompanyRouteImport.update({
+  id: '/company',
+  path: '/company',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminClientsRoute = AdminClientsRouteImport.update({
+  id: '/clients',
+  path: '/clients',
+  getParentRoute: () => AdminRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRouteWithChildren
   '/clients': typeof ClientsRoute
   '/contact': typeof ContactRoute
   '/credentials': typeof CredentialsRoute
@@ -88,7 +161,18 @@ export interface FileRoutesByFullPath {
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/staff-access': typeof StaffAccessRoute
+  '/admin/clients': typeof AdminClientsRoute
+  '/admin/company': typeof AdminCompanyRoute
+  '/admin/credentials': typeof AdminCredentialsRoute
+  '/admin/equipment': typeof AdminEquipmentRoute
+  '/admin/hero': typeof AdminHeroRoute
+  '/admin/media': typeof AdminMediaRoute
+  '/admin/projects': typeof AdminProjectsRoute
+  '/admin/services': typeof AdminServicesRoute
+  '/admin/submissions': typeof AdminSubmissionsRoute
+  '/admin/team': typeof AdminTeamRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
+  '/admin/': typeof AdminIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -101,12 +185,24 @@ export interface FileRoutesByTo {
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/staff-access': typeof StaffAccessRoute
+  '/admin/clients': typeof AdminClientsRoute
+  '/admin/company': typeof AdminCompanyRoute
+  '/admin/credentials': typeof AdminCredentialsRoute
+  '/admin/equipment': typeof AdminEquipmentRoute
+  '/admin/hero': typeof AdminHeroRoute
+  '/admin/media': typeof AdminMediaRoute
+  '/admin/projects': typeof AdminProjectsRoute
+  '/admin/services': typeof AdminServicesRoute
+  '/admin/submissions': typeof AdminSubmissionsRoute
+  '/admin/team': typeof AdminTeamRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
+  '/admin': typeof AdminIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRouteWithChildren
   '/clients': typeof ClientsRoute
   '/contact': typeof ContactRoute
   '/credentials': typeof CredentialsRoute
@@ -115,13 +211,25 @@ export interface FileRoutesById {
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/staff-access': typeof StaffAccessRoute
+  '/admin/clients': typeof AdminClientsRoute
+  '/admin/company': typeof AdminCompanyRoute
+  '/admin/credentials': typeof AdminCredentialsRoute
+  '/admin/equipment': typeof AdminEquipmentRoute
+  '/admin/hero': typeof AdminHeroRoute
+  '/admin/media': typeof AdminMediaRoute
+  '/admin/projects': typeof AdminProjectsRoute
+  '/admin/services': typeof AdminServicesRoute
+  '/admin/submissions': typeof AdminSubmissionsRoute
+  '/admin/team': typeof AdminTeamRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
+  '/admin/': typeof AdminIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
+    | '/admin'
     | '/clients'
     | '/contact'
     | '/credentials'
@@ -130,7 +238,18 @@ export interface FileRouteTypes {
     | '/services'
     | '/sitemap.xml'
     | '/staff-access'
+    | '/admin/clients'
+    | '/admin/company'
+    | '/admin/credentials'
+    | '/admin/equipment'
+    | '/admin/hero'
+    | '/admin/media'
+    | '/admin/projects'
+    | '/admin/services'
+    | '/admin/submissions'
+    | '/admin/team'
     | '/portfolio/$slug'
+    | '/admin/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -143,11 +262,23 @@ export interface FileRouteTypes {
     | '/services'
     | '/sitemap.xml'
     | '/staff-access'
+    | '/admin/clients'
+    | '/admin/company'
+    | '/admin/credentials'
+    | '/admin/equipment'
+    | '/admin/hero'
+    | '/admin/media'
+    | '/admin/projects'
+    | '/admin/services'
+    | '/admin/submissions'
+    | '/admin/team'
     | '/portfolio/$slug'
+    | '/admin'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/admin'
     | '/clients'
     | '/contact'
     | '/credentials'
@@ -156,12 +287,24 @@ export interface FileRouteTypes {
     | '/services'
     | '/sitemap.xml'
     | '/staff-access'
+    | '/admin/clients'
+    | '/admin/company'
+    | '/admin/credentials'
+    | '/admin/equipment'
+    | '/admin/hero'
+    | '/admin/media'
+    | '/admin/projects'
+    | '/admin/services'
+    | '/admin/submissions'
+    | '/admin/team'
     | '/portfolio/$slug'
+    | '/admin/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AdminRoute: typeof AdminRouteWithChildren
   ClientsRoute: typeof ClientsRoute
   ContactRoute: typeof ContactRoute
   CredentialsRoute: typeof CredentialsRoute
@@ -230,6 +373,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ClientsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -244,6 +394,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/': {
+      id: '/admin/'
+      path: '/'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/portfolio/$slug': {
       id: '/portfolio/$slug'
       path: '/$slug'
@@ -251,8 +408,108 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PortfolioSlugRouteImport
       parentRoute: typeof PortfolioRoute
     }
+    '/admin/team': {
+      id: '/admin/team'
+      path: '/team'
+      fullPath: '/admin/team'
+      preLoaderRoute: typeof AdminTeamRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/submissions': {
+      id: '/admin/submissions'
+      path: '/submissions'
+      fullPath: '/admin/submissions'
+      preLoaderRoute: typeof AdminSubmissionsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/services': {
+      id: '/admin/services'
+      path: '/services'
+      fullPath: '/admin/services'
+      preLoaderRoute: typeof AdminServicesRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/projects': {
+      id: '/admin/projects'
+      path: '/projects'
+      fullPath: '/admin/projects'
+      preLoaderRoute: typeof AdminProjectsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/media': {
+      id: '/admin/media'
+      path: '/media'
+      fullPath: '/admin/media'
+      preLoaderRoute: typeof AdminMediaRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/hero': {
+      id: '/admin/hero'
+      path: '/hero'
+      fullPath: '/admin/hero'
+      preLoaderRoute: typeof AdminHeroRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/equipment': {
+      id: '/admin/equipment'
+      path: '/equipment'
+      fullPath: '/admin/equipment'
+      preLoaderRoute: typeof AdminEquipmentRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/credentials': {
+      id: '/admin/credentials'
+      path: '/credentials'
+      fullPath: '/admin/credentials'
+      preLoaderRoute: typeof AdminCredentialsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/company': {
+      id: '/admin/company'
+      path: '/company'
+      fullPath: '/admin/company'
+      preLoaderRoute: typeof AdminCompanyRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/clients': {
+      id: '/admin/clients'
+      path: '/clients'
+      fullPath: '/admin/clients'
+      preLoaderRoute: typeof AdminClientsRouteImport
+      parentRoute: typeof AdminRoute
+    }
   }
 }
+
+interface AdminRouteChildren {
+  AdminClientsRoute: typeof AdminClientsRoute
+  AdminCompanyRoute: typeof AdminCompanyRoute
+  AdminCredentialsRoute: typeof AdminCredentialsRoute
+  AdminEquipmentRoute: typeof AdminEquipmentRoute
+  AdminHeroRoute: typeof AdminHeroRoute
+  AdminMediaRoute: typeof AdminMediaRoute
+  AdminProjectsRoute: typeof AdminProjectsRoute
+  AdminServicesRoute: typeof AdminServicesRoute
+  AdminSubmissionsRoute: typeof AdminSubmissionsRoute
+  AdminTeamRoute: typeof AdminTeamRoute
+  AdminIndexRoute: typeof AdminIndexRoute
+}
+
+const AdminRouteChildren: AdminRouteChildren = {
+  AdminClientsRoute: AdminClientsRoute,
+  AdminCompanyRoute: AdminCompanyRoute,
+  AdminCredentialsRoute: AdminCredentialsRoute,
+  AdminEquipmentRoute: AdminEquipmentRoute,
+  AdminHeroRoute: AdminHeroRoute,
+  AdminMediaRoute: AdminMediaRoute,
+  AdminProjectsRoute: AdminProjectsRoute,
+  AdminServicesRoute: AdminServicesRoute,
+  AdminSubmissionsRoute: AdminSubmissionsRoute,
+  AdminTeamRoute: AdminTeamRoute,
+  AdminIndexRoute: AdminIndexRoute,
+}
+
+const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
 
 interface PortfolioRouteChildren {
   PortfolioSlugRoute: typeof PortfolioSlugRoute
@@ -269,6 +526,7 @@ const PortfolioRouteWithChildren = PortfolioRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AdminRoute: AdminRouteWithChildren,
   ClientsRoute: ClientsRoute,
   ContactRoute: ContactRoute,
   CredentialsRoute: CredentialsRoute,

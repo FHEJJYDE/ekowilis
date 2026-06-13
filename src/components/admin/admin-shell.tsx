@@ -18,7 +18,8 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Toaster } from "@/components/ui/sonner";
 
-const nav = [
+type NavItem = { to: string; label: string; icon: typeof LayoutDashboard; exact?: boolean };
+const nav: NavItem[] = [
   { to: "/admin", label: "Dashboard", icon: LayoutDashboard, exact: true },
   { to: "/admin/hero", label: "Hero", icon: ImageIcon },
   { to: "/admin/company", label: "Company", icon: Building2 },
@@ -30,7 +31,7 @@ const nav = [
   { to: "/admin/credentials", label: "Credentials", icon: Award },
   { to: "/admin/submissions", label: "Submissions", icon: Inbox },
   { to: "/admin/media", label: "Media", icon: FolderOpen },
-] as const;
+];
 
 export function AdminShell({ email, children }: { email: string | null; children: ReactNode }) {
   const navigate = useNavigate();
