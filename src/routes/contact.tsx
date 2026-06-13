@@ -4,6 +4,7 @@ import { Mail, MapPin, CheckCircle2 } from "lucide-react";
 import { SiteLayout, PageHero } from "@/components/site-layout";
 import { company } from "@/content/company";
 import { services } from "@/content/services";
+import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -26,6 +27,30 @@ export const Route = createFileRoute("/contact")({
 
 function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setError(null);
+    setSubmitting(true);
+    const fd = new FormData(e.currentTarget);
+    const payload = {
+      name: String(fd.get("name") || ""),
+      email: String(fd.get("email") || ""),
+      phone: String(fd.get("phone") || ""),
+      project_type: String(fd.get("service") || ""),
+      location: String(fd.get("location") || ""),
+      message: String(fd.get("message") || ""),
+    };
+    const { error: err } = await supabase.from("quote_submissions").insert(payload);
+    setSubmitting(false);
+    if (err) {
+      setError(err.message);
+      return;
+    }
+    setSubmitted(true);
+  }
 
   return (
     <SiteLayout>
@@ -48,10 +73,7 @@ function ContactPage() {
             </div>
           ) : (
             <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                setSubmitted(true);
-              }}
+              onSubmit={handleSubmit}
               className="space-y-5 rounded-2xl border border-border bg-card p-6 md:p-8"
             >
               <div className="grid gap-5 md:grid-cols-2">
@@ -89,11 +111,13 @@ function ContactPage() {
                 />
               </div>
 
+              {error && <p className="text-sm text-destructive">{error}</p>}
               <button
                 type="submit"
-                className="inline-flex w-full items-center justify-center rounded-full bg-primary px-5 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 md:w-auto"
+                disabled={submitting}
+                className="inline-flex w-full items-center justify-center rounded-full bg-primary px-5 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 disabled:opacity-60 md:w-auto"
               >
-                Submit request
+                {submitting ? "Sending…" : "Submit request"}
               </button>
               <p className="text-xs text-muted-foreground">
                 We respond within 1–2 business days.
