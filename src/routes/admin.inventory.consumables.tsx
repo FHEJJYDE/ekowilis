@@ -172,15 +172,15 @@ function ConsumablesPage() {
           </DialogHeader>
           {editing && (
             <div className="grid gap-3 sm:grid-cols-2">
-              <Field label="SKU" v={editing.sku ?? ""} on={(v) => setEditing({ ...editing, sku: v })} />
-              <Field label="Name *" v={editing.name} on={(v) => setEditing({ ...editing, name: v })} />
-              <Field label="Category" v={editing.category ?? ""} on={(v) => setEditing({ ...editing, category: v })} />
-              <Field label="Unit" v={editing.unit} on={(v) => setEditing({ ...editing, unit: v })} placeholder="pcs, kg, L, bag" />
-              <Field label="Quantity on hand" type="number" v={editing.quantity_on_hand} on={(v) => setEditing({ ...editing, quantity_on_hand: Number(v) })} />
-              <Field label="Reorder point" type="number" v={editing.reorder_point} on={(v) => setEditing({ ...editing, reorder_point: Number(v) })} />
-              <Field label="Reorder quantity" type="number" v={editing.reorder_quantity} on={(v) => setEditing({ ...editing, reorder_quantity: Number(v) })} />
-              <Field label="Unit cost" type="number" v={editing.unit_cost ?? ""} on={(v) => setEditing({ ...editing, unit_cost: v === "" ? null : Number(v) })} />
-              <Field label="Supplier" v={editing.supplier ?? ""} on={(v) => setEditing({ ...editing, supplier: v })} />
+              <Field label="SKU" v={editing.sku ?? ""} on={(v: string) => setEditing({ ...editing, sku: v })} />
+              <Field label="Name *" v={editing.name} on={(v: string) => setEditing({ ...editing, name: v })} />
+              <Field label="Category" v={editing.category ?? ""} on={(v: string) => setEditing({ ...editing, category: v })} />
+              <Field label="Unit" v={editing.unit} on={(v: string) => setEditing({ ...editing, unit: v })} placeholder="pcs, kg, L, bag" />
+              <Field label="Quantity on hand" type="number" v={editing.quantity_on_hand} on={(v: string) => setEditing({ ...editing, quantity_on_hand: Number(v) })} />
+              <Field label="Reorder point" type="number" v={editing.reorder_point} on={(v: string) => setEditing({ ...editing, reorder_point: Number(v) })} />
+              <Field label="Reorder quantity" type="number" v={editing.reorder_quantity} on={(v: string) => setEditing({ ...editing, reorder_quantity: Number(v) })} />
+              <Field label="Unit cost" type="number" v={editing.unit_cost ?? ""} on={(v: string) => setEditing({ ...editing, unit_cost: v === "" ? null : Number(v) })} />
+              <Field label="Supplier" v={editing.supplier ?? ""} on={(v: string) => setEditing({ ...editing, supplier: v })} />
               <div className="sm:col-span-2">
                 <Label>Notes</Label>
                 <Textarea value={editing.notes ?? ""} onChange={(e) => setEditing({ ...editing, notes: e.target.value })} />
