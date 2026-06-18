@@ -12,6 +12,7 @@ import {
   Award,
   Inbox,
   FolderOpen,
+  Boxes,
   LogOut,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
@@ -29,6 +30,7 @@ const nav: NavItem[] = [
   { to: "/admin/equipment", label: "Equipment", icon: Truck },
   { to: "/admin/clients", label: "Clients", icon: Briefcase },
   { to: "/admin/credentials", label: "Credentials", icon: Award },
+  { to: "/admin/inventory", label: "Inventory", icon: Boxes },
   { to: "/admin/submissions", label: "Submissions", icon: Inbox },
   { to: "/admin/media", label: "Media", icon: FolderOpen },
 ];
