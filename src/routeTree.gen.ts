@@ -27,11 +27,21 @@ import { Route as AdminSubmissionsRouteImport } from './routes/admin.submissions
 import { Route as AdminServicesRouteImport } from './routes/admin.services'
 import { Route as AdminProjectsRouteImport } from './routes/admin.projects'
 import { Route as AdminMediaRouteImport } from './routes/admin.media'
+import { Route as AdminInventoryRouteImport } from './routes/admin.inventory'
 import { Route as AdminHeroRouteImport } from './routes/admin.hero'
 import { Route as AdminEquipmentRouteImport } from './routes/admin.equipment'
 import { Route as AdminCredentialsRouteImport } from './routes/admin.credentials'
 import { Route as AdminCompanyRouteImport } from './routes/admin.company'
 import { Route as AdminClientsRouteImport } from './routes/admin.clients'
+import { Route as AdminInventoryIndexRouteImport } from './routes/admin.inventory.index'
+import { Route as AdminInventoryTransfersRouteImport } from './routes/admin.inventory.transfers'
+import { Route as AdminInventoryToolsRouteImport } from './routes/admin.inventory.tools'
+import { Route as AdminInventoryReportsRouteImport } from './routes/admin.inventory.reports'
+import { Route as AdminInventoryProjectsRouteImport } from './routes/admin.inventory.projects'
+import { Route as AdminInventoryMaintenanceRouteImport } from './routes/admin.inventory.maintenance'
+import { Route as AdminInventoryLocationsRouteImport } from './routes/admin.inventory.locations'
+import { Route as AdminInventoryConsumablesRouteImport } from './routes/admin.inventory.consumables'
+import { Route as AdminInventoryAssetsRouteImport } from './routes/admin.inventory.assets'
 
 const StaffAccessRoute = StaffAccessRouteImport.update({
   id: '/staff-access',
@@ -123,6 +133,11 @@ const AdminMediaRoute = AdminMediaRouteImport.update({
   path: '/media',
   getParentRoute: () => AdminRoute,
 } as any)
+const AdminInventoryRoute = AdminInventoryRouteImport.update({
+  id: '/inventory',
+  path: '/inventory',
+  getParentRoute: () => AdminRoute,
+} as any)
 const AdminHeroRoute = AdminHeroRouteImport.update({
   id: '/hero',
   path: '/hero',
@@ -148,6 +163,53 @@ const AdminClientsRoute = AdminClientsRouteImport.update({
   path: '/clients',
   getParentRoute: () => AdminRoute,
 } as any)
+const AdminInventoryIndexRoute = AdminInventoryIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AdminInventoryRoute,
+} as any)
+const AdminInventoryTransfersRoute = AdminInventoryTransfersRouteImport.update({
+  id: '/transfers',
+  path: '/transfers',
+  getParentRoute: () => AdminInventoryRoute,
+} as any)
+const AdminInventoryToolsRoute = AdminInventoryToolsRouteImport.update({
+  id: '/tools',
+  path: '/tools',
+  getParentRoute: () => AdminInventoryRoute,
+} as any)
+const AdminInventoryReportsRoute = AdminInventoryReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => AdminInventoryRoute,
+} as any)
+const AdminInventoryProjectsRoute = AdminInventoryProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => AdminInventoryRoute,
+} as any)
+const AdminInventoryMaintenanceRoute =
+  AdminInventoryMaintenanceRouteImport.update({
+    id: '/maintenance',
+    path: '/maintenance',
+    getParentRoute: () => AdminInventoryRoute,
+  } as any)
+const AdminInventoryLocationsRoute = AdminInventoryLocationsRouteImport.update({
+  id: '/locations',
+  path: '/locations',
+  getParentRoute: () => AdminInventoryRoute,
+} as any)
+const AdminInventoryConsumablesRoute =
+  AdminInventoryConsumablesRouteImport.update({
+    id: '/consumables',
+    path: '/consumables',
+    getParentRoute: () => AdminInventoryRoute,
+  } as any)
+const AdminInventoryAssetsRoute = AdminInventoryAssetsRouteImport.update({
+  id: '/assets',
+  path: '/assets',
+  getParentRoute: () => AdminInventoryRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -166,6 +228,7 @@ export interface FileRoutesByFullPath {
   '/admin/credentials': typeof AdminCredentialsRoute
   '/admin/equipment': typeof AdminEquipmentRoute
   '/admin/hero': typeof AdminHeroRoute
+  '/admin/inventory': typeof AdminInventoryRouteWithChildren
   '/admin/media': typeof AdminMediaRoute
   '/admin/projects': typeof AdminProjectsRoute
   '/admin/services': typeof AdminServicesRoute
@@ -173,6 +236,15 @@ export interface FileRoutesByFullPath {
   '/admin/team': typeof AdminTeamRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/admin/': typeof AdminIndexRoute
+  '/admin/inventory/assets': typeof AdminInventoryAssetsRoute
+  '/admin/inventory/consumables': typeof AdminInventoryConsumablesRoute
+  '/admin/inventory/locations': typeof AdminInventoryLocationsRoute
+  '/admin/inventory/maintenance': typeof AdminInventoryMaintenanceRoute
+  '/admin/inventory/projects': typeof AdminInventoryProjectsRoute
+  '/admin/inventory/reports': typeof AdminInventoryReportsRoute
+  '/admin/inventory/tools': typeof AdminInventoryToolsRoute
+  '/admin/inventory/transfers': typeof AdminInventoryTransfersRoute
+  '/admin/inventory/': typeof AdminInventoryIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -197,6 +269,15 @@ export interface FileRoutesByTo {
   '/admin/team': typeof AdminTeamRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/admin': typeof AdminIndexRoute
+  '/admin/inventory/assets': typeof AdminInventoryAssetsRoute
+  '/admin/inventory/consumables': typeof AdminInventoryConsumablesRoute
+  '/admin/inventory/locations': typeof AdminInventoryLocationsRoute
+  '/admin/inventory/maintenance': typeof AdminInventoryMaintenanceRoute
+  '/admin/inventory/projects': typeof AdminInventoryProjectsRoute
+  '/admin/inventory/reports': typeof AdminInventoryReportsRoute
+  '/admin/inventory/tools': typeof AdminInventoryToolsRoute
+  '/admin/inventory/transfers': typeof AdminInventoryTransfersRoute
+  '/admin/inventory': typeof AdminInventoryIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -216,6 +297,7 @@ export interface FileRoutesById {
   '/admin/credentials': typeof AdminCredentialsRoute
   '/admin/equipment': typeof AdminEquipmentRoute
   '/admin/hero': typeof AdminHeroRoute
+  '/admin/inventory': typeof AdminInventoryRouteWithChildren
   '/admin/media': typeof AdminMediaRoute
   '/admin/projects': typeof AdminProjectsRoute
   '/admin/services': typeof AdminServicesRoute
@@ -223,6 +305,15 @@ export interface FileRoutesById {
   '/admin/team': typeof AdminTeamRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/admin/': typeof AdminIndexRoute
+  '/admin/inventory/assets': typeof AdminInventoryAssetsRoute
+  '/admin/inventory/consumables': typeof AdminInventoryConsumablesRoute
+  '/admin/inventory/locations': typeof AdminInventoryLocationsRoute
+  '/admin/inventory/maintenance': typeof AdminInventoryMaintenanceRoute
+  '/admin/inventory/projects': typeof AdminInventoryProjectsRoute
+  '/admin/inventory/reports': typeof AdminInventoryReportsRoute
+  '/admin/inventory/tools': typeof AdminInventoryToolsRoute
+  '/admin/inventory/transfers': typeof AdminInventoryTransfersRoute
+  '/admin/inventory/': typeof AdminInventoryIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -243,6 +334,7 @@ export interface FileRouteTypes {
     | '/admin/credentials'
     | '/admin/equipment'
     | '/admin/hero'
+    | '/admin/inventory'
     | '/admin/media'
     | '/admin/projects'
     | '/admin/services'
@@ -250,6 +342,15 @@ export interface FileRouteTypes {
     | '/admin/team'
     | '/portfolio/$slug'
     | '/admin/'
+    | '/admin/inventory/assets'
+    | '/admin/inventory/consumables'
+    | '/admin/inventory/locations'
+    | '/admin/inventory/maintenance'
+    | '/admin/inventory/projects'
+    | '/admin/inventory/reports'
+    | '/admin/inventory/tools'
+    | '/admin/inventory/transfers'
+    | '/admin/inventory/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -274,6 +375,15 @@ export interface FileRouteTypes {
     | '/admin/team'
     | '/portfolio/$slug'
     | '/admin'
+    | '/admin/inventory/assets'
+    | '/admin/inventory/consumables'
+    | '/admin/inventory/locations'
+    | '/admin/inventory/maintenance'
+    | '/admin/inventory/projects'
+    | '/admin/inventory/reports'
+    | '/admin/inventory/tools'
+    | '/admin/inventory/transfers'
+    | '/admin/inventory'
   id:
     | '__root__'
     | '/'
@@ -292,6 +402,7 @@ export interface FileRouteTypes {
     | '/admin/credentials'
     | '/admin/equipment'
     | '/admin/hero'
+    | '/admin/inventory'
     | '/admin/media'
     | '/admin/projects'
     | '/admin/services'
@@ -299,6 +410,15 @@ export interface FileRouteTypes {
     | '/admin/team'
     | '/portfolio/$slug'
     | '/admin/'
+    | '/admin/inventory/assets'
+    | '/admin/inventory/consumables'
+    | '/admin/inventory/locations'
+    | '/admin/inventory/maintenance'
+    | '/admin/inventory/projects'
+    | '/admin/inventory/reports'
+    | '/admin/inventory/tools'
+    | '/admin/inventory/transfers'
+    | '/admin/inventory/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -443,6 +563,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminMediaRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/admin/inventory': {
+      id: '/admin/inventory'
+      path: '/inventory'
+      fullPath: '/admin/inventory'
+      preLoaderRoute: typeof AdminInventoryRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/admin/hero': {
       id: '/admin/hero'
       path: '/hero'
@@ -478,8 +605,99 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminClientsRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/admin/inventory/': {
+      id: '/admin/inventory/'
+      path: '/'
+      fullPath: '/admin/inventory/'
+      preLoaderRoute: typeof AdminInventoryIndexRouteImport
+      parentRoute: typeof AdminInventoryRoute
+    }
+    '/admin/inventory/transfers': {
+      id: '/admin/inventory/transfers'
+      path: '/transfers'
+      fullPath: '/admin/inventory/transfers'
+      preLoaderRoute: typeof AdminInventoryTransfersRouteImport
+      parentRoute: typeof AdminInventoryRoute
+    }
+    '/admin/inventory/tools': {
+      id: '/admin/inventory/tools'
+      path: '/tools'
+      fullPath: '/admin/inventory/tools'
+      preLoaderRoute: typeof AdminInventoryToolsRouteImport
+      parentRoute: typeof AdminInventoryRoute
+    }
+    '/admin/inventory/reports': {
+      id: '/admin/inventory/reports'
+      path: '/reports'
+      fullPath: '/admin/inventory/reports'
+      preLoaderRoute: typeof AdminInventoryReportsRouteImport
+      parentRoute: typeof AdminInventoryRoute
+    }
+    '/admin/inventory/projects': {
+      id: '/admin/inventory/projects'
+      path: '/projects'
+      fullPath: '/admin/inventory/projects'
+      preLoaderRoute: typeof AdminInventoryProjectsRouteImport
+      parentRoute: typeof AdminInventoryRoute
+    }
+    '/admin/inventory/maintenance': {
+      id: '/admin/inventory/maintenance'
+      path: '/maintenance'
+      fullPath: '/admin/inventory/maintenance'
+      preLoaderRoute: typeof AdminInventoryMaintenanceRouteImport
+      parentRoute: typeof AdminInventoryRoute
+    }
+    '/admin/inventory/locations': {
+      id: '/admin/inventory/locations'
+      path: '/locations'
+      fullPath: '/admin/inventory/locations'
+      preLoaderRoute: typeof AdminInventoryLocationsRouteImport
+      parentRoute: typeof AdminInventoryRoute
+    }
+    '/admin/inventory/consumables': {
+      id: '/admin/inventory/consumables'
+      path: '/consumables'
+      fullPath: '/admin/inventory/consumables'
+      preLoaderRoute: typeof AdminInventoryConsumablesRouteImport
+      parentRoute: typeof AdminInventoryRoute
+    }
+    '/admin/inventory/assets': {
+      id: '/admin/inventory/assets'
+      path: '/assets'
+      fullPath: '/admin/inventory/assets'
+      preLoaderRoute: typeof AdminInventoryAssetsRouteImport
+      parentRoute: typeof AdminInventoryRoute
+    }
   }
 }
+
+interface AdminInventoryRouteChildren {
+  AdminInventoryAssetsRoute: typeof AdminInventoryAssetsRoute
+  AdminInventoryConsumablesRoute: typeof AdminInventoryConsumablesRoute
+  AdminInventoryLocationsRoute: typeof AdminInventoryLocationsRoute
+  AdminInventoryMaintenanceRoute: typeof AdminInventoryMaintenanceRoute
+  AdminInventoryProjectsRoute: typeof AdminInventoryProjectsRoute
+  AdminInventoryReportsRoute: typeof AdminInventoryReportsRoute
+  AdminInventoryToolsRoute: typeof AdminInventoryToolsRoute
+  AdminInventoryTransfersRoute: typeof AdminInventoryTransfersRoute
+  AdminInventoryIndexRoute: typeof AdminInventoryIndexRoute
+}
+
+const AdminInventoryRouteChildren: AdminInventoryRouteChildren = {
+  AdminInventoryAssetsRoute: AdminInventoryAssetsRoute,
+  AdminInventoryConsumablesRoute: AdminInventoryConsumablesRoute,
+  AdminInventoryLocationsRoute: AdminInventoryLocationsRoute,
+  AdminInventoryMaintenanceRoute: AdminInventoryMaintenanceRoute,
+  AdminInventoryProjectsRoute: AdminInventoryProjectsRoute,
+  AdminInventoryReportsRoute: AdminInventoryReportsRoute,
+  AdminInventoryToolsRoute: AdminInventoryToolsRoute,
+  AdminInventoryTransfersRoute: AdminInventoryTransfersRoute,
+  AdminInventoryIndexRoute: AdminInventoryIndexRoute,
+}
+
+const AdminInventoryRouteWithChildren = AdminInventoryRoute._addFileChildren(
+  AdminInventoryRouteChildren,
+)
 
 interface AdminRouteChildren {
   AdminClientsRoute: typeof AdminClientsRoute
@@ -487,6 +705,7 @@ interface AdminRouteChildren {
   AdminCredentialsRoute: typeof AdminCredentialsRoute
   AdminEquipmentRoute: typeof AdminEquipmentRoute
   AdminHeroRoute: typeof AdminHeroRoute
+  AdminInventoryRoute: typeof AdminInventoryRouteWithChildren
   AdminMediaRoute: typeof AdminMediaRoute
   AdminProjectsRoute: typeof AdminProjectsRoute
   AdminServicesRoute: typeof AdminServicesRoute
@@ -501,6 +720,7 @@ const AdminRouteChildren: AdminRouteChildren = {
   AdminCredentialsRoute: AdminCredentialsRoute,
   AdminEquipmentRoute: AdminEquipmentRoute,
   AdminHeroRoute: AdminHeroRoute,
+  AdminInventoryRoute: AdminInventoryRouteWithChildren,
   AdminMediaRoute: AdminMediaRoute,
   AdminProjectsRoute: AdminProjectsRoute,
   AdminServicesRoute: AdminServicesRoute,
@@ -539,13 +759,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
