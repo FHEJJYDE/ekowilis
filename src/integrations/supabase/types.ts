@@ -29,6 +29,112 @@ export type Database = {
         }
         Relationships: []
       }
+      assets: {
+        Row: {
+          asset_tag: string
+          assigned_to_person: string | null
+          assigned_to_project_id: string | null
+          category: string | null
+          created_at: string
+          current_location_id: string | null
+          current_value: number | null
+          hours_meter: number | null
+          id: string
+          image_url: string | null
+          last_service_at: string | null
+          linked_equipment_id: string | null
+          make: string | null
+          model: string | null
+          name: string
+          next_service_due_at: string | null
+          next_service_due_hours: number | null
+          notes: string | null
+          odometer: number | null
+          purchase_cost: number | null
+          purchase_date: string | null
+          serial_number: string | null
+          status: Database["public"]["Enums"]["inv_asset_status"]
+          updated_at: string
+          year: number | null
+        }
+        Insert: {
+          asset_tag: string
+          assigned_to_person?: string | null
+          assigned_to_project_id?: string | null
+          category?: string | null
+          created_at?: string
+          current_location_id?: string | null
+          current_value?: number | null
+          hours_meter?: number | null
+          id?: string
+          image_url?: string | null
+          last_service_at?: string | null
+          linked_equipment_id?: string | null
+          make?: string | null
+          model?: string | null
+          name: string
+          next_service_due_at?: string | null
+          next_service_due_hours?: number | null
+          notes?: string | null
+          odometer?: number | null
+          purchase_cost?: number | null
+          purchase_date?: string | null
+          serial_number?: string | null
+          status?: Database["public"]["Enums"]["inv_asset_status"]
+          updated_at?: string
+          year?: number | null
+        }
+        Update: {
+          asset_tag?: string
+          assigned_to_person?: string | null
+          assigned_to_project_id?: string | null
+          category?: string | null
+          created_at?: string
+          current_location_id?: string | null
+          current_value?: number | null
+          hours_meter?: number | null
+          id?: string
+          image_url?: string | null
+          last_service_at?: string | null
+          linked_equipment_id?: string | null
+          make?: string | null
+          model?: string | null
+          name?: string
+          next_service_due_at?: string | null
+          next_service_due_hours?: number | null
+          notes?: string | null
+          odometer?: number | null
+          purchase_cost?: number | null
+          purchase_date?: string | null
+          serial_number?: string | null
+          status?: Database["public"]["Enums"]["inv_asset_status"]
+          updated_at?: string
+          year?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "assets_assigned_to_project_id_fkey"
+            columns: ["assigned_to_project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "assets_current_location_id_fkey"
+            columns: ["current_location_id"]
+            isOneToOne: false
+            referencedRelation: "inventory_locations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "assets_linked_equipment_id_fkey"
+            columns: ["linked_equipment_id"]
+            isOneToOne: false
+            referencedRelation: "equipment"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       clients: {
         Row: {
           created_at: string
@@ -112,6 +218,68 @@ export type Database = {
           vision?: string | null
         }
         Relationships: []
+      }
+      consumables: {
+        Row: {
+          category: string | null
+          created_at: string
+          default_location_id: string | null
+          id: string
+          image_url: string | null
+          name: string
+          notes: string | null
+          quantity_on_hand: number
+          reorder_point: number
+          reorder_quantity: number
+          sku: string | null
+          supplier: string | null
+          unit: string
+          unit_cost: number | null
+          updated_at: string
+        }
+        Insert: {
+          category?: string | null
+          created_at?: string
+          default_location_id?: string | null
+          id?: string
+          image_url?: string | null
+          name: string
+          notes?: string | null
+          quantity_on_hand?: number
+          reorder_point?: number
+          reorder_quantity?: number
+          sku?: string | null
+          supplier?: string | null
+          unit?: string
+          unit_cost?: number | null
+          updated_at?: string
+        }
+        Update: {
+          category?: string | null
+          created_at?: string
+          default_location_id?: string | null
+          id?: string
+          image_url?: string | null
+          name?: string
+          notes?: string | null
+          quantity_on_hand?: number
+          reorder_point?: number
+          reorder_quantity?: number
+          sku?: string | null
+          supplier?: string | null
+          unit?: string
+          unit_cost?: number | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "consumables_default_location_id_fkey"
+            columns: ["default_location_id"]
+            isOneToOne: false
+            referencedRelation: "inventory_locations"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       contact_submissions: {
         Row: {
@@ -257,6 +425,165 @@ export type Database = {
         }
         Relationships: []
       }
+      inventory_locations: {
+        Row: {
+          address: string | null
+          created_at: string
+          id: string
+          is_active: boolean
+          name: string
+          notes: string | null
+          type: Database["public"]["Enums"]["inv_location_type"]
+          updated_at: string
+        }
+        Insert: {
+          address?: string | null
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          name: string
+          notes?: string | null
+          type?: Database["public"]["Enums"]["inv_location_type"]
+          updated_at?: string
+        }
+        Update: {
+          address?: string | null
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          name?: string
+          notes?: string | null
+          type?: Database["public"]["Enums"]["inv_location_type"]
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      inventory_transactions: {
+        Row: {
+          created_at: string
+          from_location_id: string | null
+          id: string
+          item_id: string
+          item_kind: Database["public"]["Enums"]["inv_item_kind"]
+          note: string | null
+          occurred_at: string
+          performed_by: string | null
+          performed_by_name: string | null
+          project_id: string | null
+          quantity: number | null
+          to_location_id: string | null
+          txn_type: Database["public"]["Enums"]["inv_txn_type"]
+        }
+        Insert: {
+          created_at?: string
+          from_location_id?: string | null
+          id?: string
+          item_id: string
+          item_kind: Database["public"]["Enums"]["inv_item_kind"]
+          note?: string | null
+          occurred_at?: string
+          performed_by?: string | null
+          performed_by_name?: string | null
+          project_id?: string | null
+          quantity?: number | null
+          to_location_id?: string | null
+          txn_type: Database["public"]["Enums"]["inv_txn_type"]
+        }
+        Update: {
+          created_at?: string
+          from_location_id?: string | null
+          id?: string
+          item_id?: string
+          item_kind?: Database["public"]["Enums"]["inv_item_kind"]
+          note?: string | null
+          occurred_at?: string
+          performed_by?: string | null
+          performed_by_name?: string | null
+          project_id?: string | null
+          quantity?: number | null
+          to_location_id?: string | null
+          txn_type?: Database["public"]["Enums"]["inv_txn_type"]
+        }
+        Relationships: [
+          {
+            foreignKeyName: "inventory_transactions_from_location_id_fkey"
+            columns: ["from_location_id"]
+            isOneToOne: false
+            referencedRelation: "inventory_locations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "inventory_transactions_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "inventory_transactions_to_location_id_fkey"
+            columns: ["to_location_id"]
+            isOneToOne: false
+            referencedRelation: "inventory_locations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      maintenance_logs: {
+        Row: {
+          asset_id: string
+          cost: number | null
+          created_at: string
+          hours_at_service: number | null
+          id: string
+          next_due_at: string | null
+          next_due_hours: number | null
+          notes: string | null
+          parts_used: Json | null
+          performed_at: string
+          performed_by: string | null
+          type: Database["public"]["Enums"]["inv_maint_type"]
+          updated_at: string
+        }
+        Insert: {
+          asset_id: string
+          cost?: number | null
+          created_at?: string
+          hours_at_service?: number | null
+          id?: string
+          next_due_at?: string | null
+          next_due_hours?: number | null
+          notes?: string | null
+          parts_used?: Json | null
+          performed_at?: string
+          performed_by?: string | null
+          type?: Database["public"]["Enums"]["inv_maint_type"]
+          updated_at?: string
+        }
+        Update: {
+          asset_id?: string
+          cost?: number | null
+          created_at?: string
+          hours_at_service?: number | null
+          id?: string
+          next_due_at?: string | null
+          next_due_hours?: number | null
+          notes?: string | null
+          parts_used?: Json | null
+          performed_at?: string
+          performed_by?: string | null
+          type?: Database["public"]["Enums"]["inv_maint_type"]
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "maintenance_logs_asset_id_fkey"
+            columns: ["asset_id"]
+            isOneToOne: false
+            referencedRelation: "assets"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       media_assets: {
         Row: {
           created_at: string
@@ -310,6 +637,57 @@ export type Database = {
           id?: string
         }
         Relationships: []
+      }
+      project_material_allocations: {
+        Row: {
+          consumable_id: string
+          created_at: string
+          id: string
+          note: string | null
+          project_id: string
+          quantity_allocated: number
+          quantity_used: number
+          status: Database["public"]["Enums"]["inv_alloc_status"]
+          updated_at: string
+        }
+        Insert: {
+          consumable_id: string
+          created_at?: string
+          id?: string
+          note?: string | null
+          project_id: string
+          quantity_allocated?: number
+          quantity_used?: number
+          status?: Database["public"]["Enums"]["inv_alloc_status"]
+          updated_at?: string
+        }
+        Update: {
+          consumable_id?: string
+          created_at?: string
+          id?: string
+          note?: string | null
+          project_id?: string
+          quantity_allocated?: number
+          quantity_used?: number
+          status?: Database["public"]["Enums"]["inv_alloc_status"]
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "project_material_allocations_consumable_id_fkey"
+            columns: ["consumable_id"]
+            isOneToOne: false
+            referencedRelation: "consumables"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "project_material_allocations_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       projects: {
         Row: {
@@ -488,6 +866,71 @@ export type Database = {
         }
         Relationships: []
       }
+      tools: {
+        Row: {
+          category: string | null
+          checked_out_at: string | null
+          checked_out_to: string | null
+          condition: string | null
+          created_at: string
+          current_location_id: string | null
+          expected_return_at: string | null
+          id: string
+          image_url: string | null
+          name: string
+          notes: string | null
+          purchase_cost: number | null
+          purchase_date: string | null
+          status: Database["public"]["Enums"]["inv_tool_status"]
+          tool_tag: string
+          updated_at: string
+        }
+        Insert: {
+          category?: string | null
+          checked_out_at?: string | null
+          checked_out_to?: string | null
+          condition?: string | null
+          created_at?: string
+          current_location_id?: string | null
+          expected_return_at?: string | null
+          id?: string
+          image_url?: string | null
+          name: string
+          notes?: string | null
+          purchase_cost?: number | null
+          purchase_date?: string | null
+          status?: Database["public"]["Enums"]["inv_tool_status"]
+          tool_tag: string
+          updated_at?: string
+        }
+        Update: {
+          category?: string | null
+          checked_out_at?: string | null
+          checked_out_to?: string | null
+          condition?: string | null
+          created_at?: string
+          current_location_id?: string | null
+          expected_return_at?: string | null
+          id?: string
+          image_url?: string | null
+          name?: string
+          notes?: string | null
+          purchase_cost?: number | null
+          purchase_date?: string | null
+          status?: Database["public"]["Enums"]["inv_tool_status"]
+          tool_tag?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "tools_current_location_id_fkey"
+            columns: ["current_location_id"]
+            isOneToOne: false
+            referencedRelation: "inventory_locations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
@@ -496,7 +939,37 @@ export type Database = {
       is_admin: { Args: { _user_id: string }; Returns: boolean }
     }
     Enums: {
-      [_ in never]: never
+      inv_alloc_status:
+        | "planned"
+        | "allocated"
+        | "partial"
+        | "completed"
+        | "cancelled"
+      inv_asset_status:
+        | "available"
+        | "in_use"
+        | "maintenance"
+        | "leased_out"
+        | "retired"
+      inv_item_kind: "asset" | "consumable" | "tool"
+      inv_location_type: "yard" | "site" | "warehouse" | "vehicle" | "other"
+      inv_maint_type: "service" | "repair" | "inspection"
+      inv_tool_status:
+        | "available"
+        | "checked_out"
+        | "maintenance"
+        | "lost"
+        | "retired"
+      inv_txn_type:
+        | "receive"
+        | "issue"
+        | "transfer"
+        | "return"
+        | "adjust"
+        | "waste"
+        | "status_change"
+        | "checkout"
+        | "checkin"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -623,6 +1096,42 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      inv_alloc_status: [
+        "planned",
+        "allocated",
+        "partial",
+        "completed",
+        "cancelled",
+      ],
+      inv_asset_status: [
+        "available",
+        "in_use",
+        "maintenance",
+        "leased_out",
+        "retired",
+      ],
+      inv_item_kind: ["asset", "consumable", "tool"],
+      inv_location_type: ["yard", "site", "warehouse", "vehicle", "other"],
+      inv_maint_type: ["service", "repair", "inspection"],
+      inv_tool_status: [
+        "available",
+        "checked_out",
+        "maintenance",
+        "lost",
+        "retired",
+      ],
+      inv_txn_type: [
+        "receive",
+        "issue",
+        "transfer",
+        "return",
+        "adjust",
+        "waste",
+        "status_change",
+        "checkout",
+        "checkin",
+      ],
+    },
   },
 } as const
