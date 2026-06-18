@@ -34,6 +34,7 @@ import { Route as AdminCredentialsRouteImport } from './routes/admin.credentials
 import { Route as AdminCompanyRouteImport } from './routes/admin.company'
 import { Route as AdminClientsRouteImport } from './routes/admin.clients'
 import { Route as AdminInventoryIndexRouteImport } from './routes/admin.inventory.index'
+import { Route as AdminInventoryLocationsRouteImport } from './routes/admin.inventory.locations'
 
 const StaffAccessRoute = StaffAccessRouteImport.update({
   id: '/staff-access',
@@ -160,6 +161,11 @@ const AdminInventoryIndexRoute = AdminInventoryIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AdminInventoryRoute,
 } as any)
+const AdminInventoryLocationsRoute = AdminInventoryLocationsRouteImport.update({
+  id: '/locations',
+  path: '/locations',
+  getParentRoute: () => AdminInventoryRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -186,6 +192,7 @@ export interface FileRoutesByFullPath {
   '/admin/team': typeof AdminTeamRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/admin/': typeof AdminIndexRoute
+  '/admin/inventory/locations': typeof AdminInventoryLocationsRoute
   '/admin/inventory/': typeof AdminInventoryIndexRoute
 }
 export interface FileRoutesByTo {
@@ -211,6 +218,7 @@ export interface FileRoutesByTo {
   '/admin/team': typeof AdminTeamRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/admin': typeof AdminIndexRoute
+  '/admin/inventory/locations': typeof AdminInventoryLocationsRoute
   '/admin/inventory': typeof AdminInventoryIndexRoute
 }
 export interface FileRoutesById {
@@ -239,6 +247,7 @@ export interface FileRoutesById {
   '/admin/team': typeof AdminTeamRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/admin/': typeof AdminIndexRoute
+  '/admin/inventory/locations': typeof AdminInventoryLocationsRoute
   '/admin/inventory/': typeof AdminInventoryIndexRoute
 }
 export interface FileRouteTypes {
@@ -268,6 +277,7 @@ export interface FileRouteTypes {
     | '/admin/team'
     | '/portfolio/$slug'
     | '/admin/'
+    | '/admin/inventory/locations'
     | '/admin/inventory/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -293,6 +303,7 @@ export interface FileRouteTypes {
     | '/admin/team'
     | '/portfolio/$slug'
     | '/admin'
+    | '/admin/inventory/locations'
     | '/admin/inventory'
   id:
     | '__root__'
@@ -320,6 +331,7 @@ export interface FileRouteTypes {
     | '/admin/team'
     | '/portfolio/$slug'
     | '/admin/'
+    | '/admin/inventory/locations'
     | '/admin/inventory/'
   fileRoutesById: FileRoutesById
 }
@@ -514,14 +526,23 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminInventoryIndexRouteImport
       parentRoute: typeof AdminInventoryRoute
     }
+    '/admin/inventory/locations': {
+      id: '/admin/inventory/locations'
+      path: '/locations'
+      fullPath: '/admin/inventory/locations'
+      preLoaderRoute: typeof AdminInventoryLocationsRouteImport
+      parentRoute: typeof AdminInventoryRoute
+    }
   }
 }
 
 interface AdminInventoryRouteChildren {
+  AdminInventoryLocationsRoute: typeof AdminInventoryLocationsRoute
   AdminInventoryIndexRoute: typeof AdminInventoryIndexRoute
 }
 
 const AdminInventoryRouteChildren: AdminInventoryRouteChildren = {
+  AdminInventoryLocationsRoute: AdminInventoryLocationsRoute,
   AdminInventoryIndexRoute: AdminInventoryIndexRoute,
 }
 
