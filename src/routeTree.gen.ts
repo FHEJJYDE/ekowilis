@@ -34,6 +34,7 @@ import { Route as AdminCredentialsRouteImport } from './routes/admin.credentials
 import { Route as AdminCompanyRouteImport } from './routes/admin.company'
 import { Route as AdminClientsRouteImport } from './routes/admin.clients'
 import { Route as AdminInventoryIndexRouteImport } from './routes/admin.inventory.index'
+import { Route as AdminInventoryTransfersRouteImport } from './routes/admin.inventory.transfers'
 import { Route as AdminInventoryToolsRouteImport } from './routes/admin.inventory.tools'
 import { Route as AdminInventoryLocationsRouteImport } from './routes/admin.inventory.locations'
 import { Route as AdminInventoryConsumablesRouteImport } from './routes/admin.inventory.consumables'
@@ -164,6 +165,11 @@ const AdminInventoryIndexRoute = AdminInventoryIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AdminInventoryRoute,
 } as any)
+const AdminInventoryTransfersRoute = AdminInventoryTransfersRouteImport.update({
+  id: '/transfers',
+  path: '/transfers',
+  getParentRoute: () => AdminInventoryRoute,
+} as any)
 const AdminInventoryToolsRoute = AdminInventoryToolsRouteImport.update({
   id: '/tools',
   path: '/tools',
@@ -215,6 +221,7 @@ export interface FileRoutesByFullPath {
   '/admin/inventory/consumables': typeof AdminInventoryConsumablesRoute
   '/admin/inventory/locations': typeof AdminInventoryLocationsRoute
   '/admin/inventory/tools': typeof AdminInventoryToolsRoute
+  '/admin/inventory/transfers': typeof AdminInventoryTransfersRoute
   '/admin/inventory/': typeof AdminInventoryIndexRoute
 }
 export interface FileRoutesByTo {
@@ -244,6 +251,7 @@ export interface FileRoutesByTo {
   '/admin/inventory/consumables': typeof AdminInventoryConsumablesRoute
   '/admin/inventory/locations': typeof AdminInventoryLocationsRoute
   '/admin/inventory/tools': typeof AdminInventoryToolsRoute
+  '/admin/inventory/transfers': typeof AdminInventoryTransfersRoute
   '/admin/inventory': typeof AdminInventoryIndexRoute
 }
 export interface FileRoutesById {
@@ -276,6 +284,7 @@ export interface FileRoutesById {
   '/admin/inventory/consumables': typeof AdminInventoryConsumablesRoute
   '/admin/inventory/locations': typeof AdminInventoryLocationsRoute
   '/admin/inventory/tools': typeof AdminInventoryToolsRoute
+  '/admin/inventory/transfers': typeof AdminInventoryTransfersRoute
   '/admin/inventory/': typeof AdminInventoryIndexRoute
 }
 export interface FileRouteTypes {
@@ -309,6 +318,7 @@ export interface FileRouteTypes {
     | '/admin/inventory/consumables'
     | '/admin/inventory/locations'
     | '/admin/inventory/tools'
+    | '/admin/inventory/transfers'
     | '/admin/inventory/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -338,6 +348,7 @@ export interface FileRouteTypes {
     | '/admin/inventory/consumables'
     | '/admin/inventory/locations'
     | '/admin/inventory/tools'
+    | '/admin/inventory/transfers'
     | '/admin/inventory'
   id:
     | '__root__'
@@ -369,6 +380,7 @@ export interface FileRouteTypes {
     | '/admin/inventory/consumables'
     | '/admin/inventory/locations'
     | '/admin/inventory/tools'
+    | '/admin/inventory/transfers'
     | '/admin/inventory/'
   fileRoutesById: FileRoutesById
 }
@@ -563,6 +575,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminInventoryIndexRouteImport
       parentRoute: typeof AdminInventoryRoute
     }
+    '/admin/inventory/transfers': {
+      id: '/admin/inventory/transfers'
+      path: '/transfers'
+      fullPath: '/admin/inventory/transfers'
+      preLoaderRoute: typeof AdminInventoryTransfersRouteImport
+      parentRoute: typeof AdminInventoryRoute
+    }
     '/admin/inventory/tools': {
       id: '/admin/inventory/tools'
       path: '/tools'
@@ -599,6 +618,7 @@ interface AdminInventoryRouteChildren {
   AdminInventoryConsumablesRoute: typeof AdminInventoryConsumablesRoute
   AdminInventoryLocationsRoute: typeof AdminInventoryLocationsRoute
   AdminInventoryToolsRoute: typeof AdminInventoryToolsRoute
+  AdminInventoryTransfersRoute: typeof AdminInventoryTransfersRoute
   AdminInventoryIndexRoute: typeof AdminInventoryIndexRoute
 }
 
@@ -607,6 +627,7 @@ const AdminInventoryRouteChildren: AdminInventoryRouteChildren = {
   AdminInventoryConsumablesRoute: AdminInventoryConsumablesRoute,
   AdminInventoryLocationsRoute: AdminInventoryLocationsRoute,
   AdminInventoryToolsRoute: AdminInventoryToolsRoute,
+  AdminInventoryTransfersRoute: AdminInventoryTransfersRoute,
   AdminInventoryIndexRoute: AdminInventoryIndexRoute,
 }
 
