@@ -392,6 +392,45 @@ export type Database = {
         }
         Relationships: []
       }
+      gallery_images: {
+        Row: {
+          caption: string | null
+          category: string
+          created_at: string
+          id: string
+          image_url: string
+          is_published: boolean
+          order_index: number
+          storage_path: string | null
+          title: string | null
+          updated_at: string
+        }
+        Insert: {
+          caption?: string | null
+          category: string
+          created_at?: string
+          id?: string
+          image_url: string
+          is_published?: boolean
+          order_index?: number
+          storage_path?: string | null
+          title?: string | null
+          updated_at?: string
+        }
+        Update: {
+          caption?: string | null
+          category?: string
+          created_at?: string
+          id?: string
+          image_url?: string
+          is_published?: boolean
+          order_index?: number
+          storage_path?: string | null
+          title?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       hero: {
         Row: {
           cta_href: string | null

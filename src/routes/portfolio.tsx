@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { SiteLayout, PageHero } from "@/components/site-layout";
 import { projects } from "@/content/projects";
+import { GallerySection } from "@/components/gallery-section";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
@@ -78,6 +79,13 @@ function PortfolioPage() {
           ))}
         </div>
       </section>
+
+      <GallerySection
+        category="portfolio"
+        eyebrow="Project gallery"
+        heading="More from our sites"
+        description="Recent photos uploaded from active and completed project sites."
+      />
     </SiteLayout>
   );
 }
