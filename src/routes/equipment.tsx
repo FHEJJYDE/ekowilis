@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, PageHero } from "@/components/site-layout";
 import { equipment } from "@/content/equipment";
 import equipmentImage from "@/assets/equipment-works.jpg";
+import { GallerySection } from "@/components/gallery-section";
 
 export const Route = createFileRoute("/equipment")({
   head: () => ({
@@ -73,6 +74,13 @@ function EquipmentPage() {
           </div>
         </div>
       </section>
+
+      <GallerySection
+        category="equipment"
+        eyebrow="Fleet gallery"
+        heading="Our equipment in action"
+        description="Photos of units in our yard and on active project sites."
+      />
     </SiteLayout>
   );
 }
