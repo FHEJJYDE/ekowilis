@@ -22,6 +22,7 @@ import {
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Toaster } from "@/components/ui/sonner";
+import logoUrl from "@/assets/logo.png";
 
 type NavItem = { to: string; label: string; icon: typeof LayoutDashboard; exact?: boolean };
 const nav: NavItem[] = [
@@ -134,7 +135,7 @@ export function AdminShell({ email, children }: { email: string | null; children
             <Menu style={{ width: "18px", height: "18px" }} />
           </button>
           <img
-            src="/logo.png"
+            src={logoUrl}
             alt="Ekowilis"
             style={{ height: "40px", width: "auto", objectFit: "contain" }}
           />

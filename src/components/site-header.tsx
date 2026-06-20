@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { company } from "@/content/company";
+import logoUrl from "@/assets/logo.png";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -20,7 +21,7 @@ export function SiteHeader() {
       <div className="container-x flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <img
-            src="/logo.png"
+            src={logoUrl}
             alt={company.shortName}
             className="h-14 w-auto object-contain"
           />
