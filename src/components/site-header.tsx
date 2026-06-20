@@ -18,13 +18,12 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur">
       <div className="container-x flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-baseline gap-2">
-          <span className="text-lg font-bold tracking-tight text-foreground">
-            {company.shortName}
-          </span>
-          <span className="hidden text-[11px] uppercase tracking-[0.18em] text-muted-foreground sm:inline">
-            Logistics & Engineering
-          </span>
+        <Link to="/" className="flex items-center gap-2">
+          <img
+            src="/logo.png"
+            alt={company.shortName}
+            className="h-10 w-auto object-contain"
+          />
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">
