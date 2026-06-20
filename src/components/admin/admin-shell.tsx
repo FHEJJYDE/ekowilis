@@ -40,83 +40,44 @@ const nav: NavItem[] = [
   { to: "/admin/media", label: "Media", icon: FolderOpen },
 ];
 
+// Just the nav links — no logo, no buttons, no text headers
 function SidebarNav({
   pathname,
-  email,
   onNavClick,
-  signOut,
 }: {
   pathname: string;
-  email: string | null;
   onNavClick?: () => void;
-  signOut: () => void;
 }) {
   return (
-    <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
-      {/* Logo */}
-      <div style={{ padding: "16px", borderBottom: "1px solid var(--border)", display: "flex", alignItems: "center", gap: "10px" }}>
-        <img src="/logo.png" alt="Ekowilis" style={{ height: "48px", width: "auto", objectFit: "contain" }} />
-        <div>
-          <div style={{ fontSize: "13px", fontWeight: 700, lineHeight: 1 }}>EKOWILIS</div>
-          <div style={{ fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--muted-foreground)", marginTop: "3px" }}>Admin CMS</div>
-        </div>
-      </div>
-
-      {/* Back to site */}
-      <div style={{ padding: "8px 12px", borderBottom: "1px solid var(--border)" }}>
-        <Link
-          to="/"
-          onClick={onNavClick}
-          style={{ display: "flex", alignItems: "center", gap: "8px", padding: "8px 10px", borderRadius: "6px", fontSize: "13px", color: "var(--muted-foreground)", textDecoration: "none" }}
-          className="hover:bg-muted hover:text-foreground transition-colors"
-        >
-          <ArrowLeft style={{ width: "15px", height: "15px" }} />
-          Back to Site
-        </Link>
-      </div>
-
-      {/* Nav */}
-      <nav style={{ flex: 1, overflowY: "auto", padding: "8px" }}>
-        {nav.map((item) => {
-          const active = item.exact ? pathname === item.to : pathname.startsWith(item.to);
-          const Icon = item.icon;
-          return (
-            <Link
-              key={item.to}
-              to={item.to as any}
-              onClick={onNavClick}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-                padding: "8px 12px",
-                borderRadius: "6px",
-                fontSize: "13px",
-                marginBottom: "2px",
-                textDecoration: "none",
-                backgroundColor: active ? "var(--primary)" : "transparent",
-                color: active ? "var(--primary-foreground)" : "var(--foreground)",
-              }}
-              className={active ? "" : "hover:bg-muted transition-colors"}
-            >
-              <Icon style={{ width: "15px", height: "15px", flexShrink: 0 }} />
-              {item.label}
-            </Link>
-          );
-        })}
-      </nav>
-
-      {/* Footer */}
-      <div style={{ borderTop: "1px solid var(--border)", padding: "12px" }}>
-        <div style={{ fontSize: "11px", color: "var(--muted-foreground)", marginBottom: "8px", padding: "0 4px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-          {email}
-        </div>
-        <Button variant="outline" size="sm" className="w-full" onClick={signOut}>
-          <LogOut className="mr-2 h-4 w-4" />
-          Sign out
-        </Button>
-      </div>
-    </div>
+    <nav style={{ padding: "8px" }}>
+      {nav.map((item) => {
+        const active = item.exact ? pathname === item.to : pathname.startsWith(item.to);
+        const Icon = item.icon;
+        return (
+          <Link
+            key={item.to}
+            to={item.to as any}
+            onClick={onNavClick}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+              padding: "8px 12px",
+              borderRadius: "6px",
+              fontSize: "13px",
+              marginBottom: "2px",
+              textDecoration: "none",
+              backgroundColor: active ? "var(--primary)" : "transparent",
+              color: active ? "var(--primary-foreground)" : "var(--foreground)",
+            }}
+            className={active ? "" : "hover:bg-muted transition-colors"}
+          >
+            <Icon style={{ width: "15px", height: "15px", flexShrink: 0 }} />
+            {item.label}
+          </Link>
+        );
+      })}
+    </nav>
   );
 }
 
@@ -136,7 +97,7 @@ export function AdminShell({ email, children }: { email: string | null; children
     <div className="min-h-screen bg-muted/30">
       <Toaster richColors position="top-right" />
 
-      {/* ── Top bar (all screen sizes) ───────────────────────── */}
+      {/* ── Top bar ──────────────────────────────────────────── */}
       <header
         style={{
           position: "sticky",
@@ -148,70 +109,85 @@ export function AdminShell({ email, children }: { email: string | null; children
           borderBottom: "1px solid var(--border)",
           backgroundColor: "var(--card)",
           padding: "0 16px",
-          height: "56px",
+          height: "60px",
         }}
       >
-        {/* Left: hamburger (mobile only) + logo/title */}
-        <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-          {/* Hamburger — rendered via CSS visibility so Tailwind md:hidden works */}
+        {/* Left: hamburger (mobile) + logo (always) */}
+        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
           <button
             type="button"
             aria-label="Open menu"
             onClick={() => setDrawerOpen(true)}
-            className="md:hidden inline-flex items-center justify-center rounded-md border border-border bg-transparent cursor-pointer"
-            style={{ width: "36px", height: "36px" }}
+            className="md:hidden"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: "36px",
+              height: "36px",
+              borderRadius: "6px",
+              border: "1px solid var(--border)",
+              background: "transparent",
+              cursor: "pointer",
+              flexShrink: 0,
+            }}
           >
             <Menu style={{ width: "18px", height: "18px" }} />
           </button>
-          {/* Logo only on mobile (sidebar shows it on desktop) */}
           <img
             src="/logo.png"
             alt="Ekowilis"
-            className="md:hidden"
-            style={{ height: "34px", width: "auto", objectFit: "contain" }}
+            style={{ height: "40px", width: "auto", objectFit: "contain" }}
           />
-          {/* Title only on desktop */}
-          <span
-            className="hidden md:inline"
-            style={{ fontSize: "14px", fontWeight: 600, color: "var(--foreground)" }}
-          >
-            Admin CMS
-          </span>
         </div>
 
-        {/* Right: back to site + sign out */}
+        {/* Right: Back to Site + Sign out */}
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <Link
             to="/"
-            style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "13px", color: "var(--muted-foreground)", textDecoration: "none", padding: "6px 10px", borderRadius: "6px" }}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "6px",
+              fontSize: "13px",
+              color: "var(--muted-foreground)",
+              textDecoration: "none",
+              padding: "6px 10px",
+              borderRadius: "6px",
+            }}
             className="hover:bg-muted hover:text-foreground transition-colors"
           >
             <ArrowLeft style={{ width: "14px", height: "14px" }} />
-            <span className="hidden sm:inline">Back to Site</span>
+            <span>Back to Site</span>
           </Link>
-          <Button variant="outline" size="sm" onClick={signOut} className="gap-2">
-            <LogOut className="h-4 w-4" />
-            <span className="hidden sm:inline">Sign out</span>
+          <Button variant="outline" size="sm" onClick={signOut} style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+            <LogOut style={{ width: "14px", height: "14px" }} />
+            <span>Sign out</span>
           </Button>
         </div>
       </header>
 
       <div style={{ display: "flex" }}>
-        {/* ── Desktop sidebar ─────────────────────────────────── */}
+
+        {/* ── Desktop sidebar (nav links only) ────────────────── */}
         <aside
-          className="hidden md:flex md:flex-col"
+          className="hidden md:block"
           style={{
             position: "sticky",
-            top: "56px",
-            height: "calc(100vh - 56px)",
-            width: "240px",
+            top: "60px",
+            height: "calc(100vh - 60px)",
+            width: "220px",
             flexShrink: 0,
             borderRight: "1px solid var(--border)",
             backgroundColor: "var(--card)",
             overflowY: "auto",
           }}
         >
-          <SidebarNav pathname={pathname} email={email} signOut={signOut} />
+          <SidebarNav pathname={pathname} />
+          {/* Email at the very bottom */}
+          <div style={{ padding: "12px 16px", borderTop: "1px solid var(--border)", fontSize: "11px", color: "var(--muted-foreground)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+            {email}
+          </div>
         </aside>
 
         {/* ── Mobile: backdrop ─────────────────────────────────── */}
@@ -228,7 +204,7 @@ export function AdminShell({ email, children }: { email: string | null; children
           />
         )}
 
-        {/* ── Mobile: sidebar drawer ───────────────────────────── */}
+        {/* ── Mobile: drawer sidebar (nav links only) ──────────── */}
         <aside
           style={{
             position: "fixed",
@@ -236,50 +212,50 @@ export function AdminShell({ email, children }: { email: string | null; children
             left: 0,
             bottom: 0,
             zIndex: 70,
-            width: "260px",
+            width: "240px",
             backgroundColor: "var(--card)",
             boxShadow: "4px 0 24px rgba(0,0,0,0.15)",
             transform: drawerOpen ? "translateX(0)" : "translateX(-100%)",
             transition: "transform 0.25s ease",
             overflowY: "auto",
+            display: "flex",
+            flexDirection: "column",
           }}
-          className="md:hidden"
         >
-          {/* Close button */}
-          <button
-            type="button"
-            aria-label="Close menu"
-            onClick={() => setDrawerOpen(false)}
-            style={{
-              position: "absolute",
-              top: "10px",
-              right: "10px",
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              width: "30px",
-              height: "30px",
-              borderRadius: "6px",
-              border: "1px solid var(--border)",
-              background: "transparent",
-              cursor: "pointer",
-              zIndex: 1,
-            }}
-          >
-            <X style={{ width: "14px", height: "14px" }} />
-          </button>
-          <SidebarNav
-            pathname={pathname}
-            email={email}
-            onNavClick={() => setDrawerOpen(false)}
-            signOut={signOut}
-          />
+          {/* Drawer top: close button only */}
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", padding: "12px 12px 4px" }}>
+            <button
+              type="button"
+              aria-label="Close menu"
+              onClick={() => setDrawerOpen(false)}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "30px",
+                height: "30px",
+                borderRadius: "6px",
+                border: "1px solid var(--border)",
+                background: "transparent",
+                cursor: "pointer",
+              }}
+            >
+              <X style={{ width: "14px", height: "14px" }} />
+            </button>
+          </div>
+          <div style={{ flex: 1 }}>
+            <SidebarNav pathname={pathname} onNavClick={() => setDrawerOpen(false)} />
+          </div>
+          <div style={{ padding: "12px 16px", borderTop: "1px solid var(--border)", fontSize: "11px", color: "var(--muted-foreground)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+            {email}
+          </div>
         </aside>
 
         {/* ── Page content ─────────────────────────────────────── */}
         <main style={{ flex: 1, minWidth: 0 }}>
           <div className="p-4 md:p-8">{children}</div>
         </main>
+
       </div>
     </div>
   );
