@@ -120,7 +120,6 @@ export function AdminShell({ email, children }: { email: string | null; children
             onClick={() => setDrawerOpen(true)}
             className="md:hidden"
             style={{
-              display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",
               width: "36px",
