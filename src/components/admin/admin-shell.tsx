@@ -151,30 +151,30 @@ export function AdminShell({ email, children }: { email: string | null; children
           height: "56px",
         }}
       >
-        {/* Left: hamburger (mobile) + logo */}
+        {/* Left: hamburger (mobile only) + logo/title */}
         <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-          {/* Hamburger — only on mobile */}
+          {/* Hamburger — rendered via CSS visibility so Tailwind md:hidden works */}
           <button
             type="button"
             aria-label="Open menu"
             onClick={() => setDrawerOpen(true)}
-            className="md:hidden"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              width: "36px",
-              height: "36px",
-              borderRadius: "6px",
-              border: "1px solid var(--border)",
-              background: "transparent",
-              cursor: "pointer",
-            }}
+            className="md:hidden inline-flex items-center justify-center rounded-md border border-border bg-transparent cursor-pointer"
+            style={{ width: "36px", height: "36px" }}
           >
             <Menu style={{ width: "18px", height: "18px" }} />
           </button>
-          <img src="/logo.png" alt="Ekowilis" style={{ height: "36px", width: "auto", objectFit: "contain" }} />
-          <span style={{ fontSize: "13px", fontWeight: 600, color: "var(--foreground)" }} className="hidden sm:inline">
+          {/* Logo only on mobile (sidebar shows it on desktop) */}
+          <img
+            src="/logo.png"
+            alt="Ekowilis"
+            className="md:hidden"
+            style={{ height: "34px", width: "auto", objectFit: "contain" }}
+          />
+          {/* Title only on desktop */}
+          <span
+            className="hidden md:inline"
+            style={{ fontSize: "14px", fontWeight: 600, color: "var(--foreground)" }}
+          >
             Admin CMS
           </span>
         </div>
@@ -184,10 +184,10 @@ export function AdminShell({ email, children }: { email: string | null; children
           <Link
             to="/"
             style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "13px", color: "var(--muted-foreground)", textDecoration: "none", padding: "6px 10px", borderRadius: "6px" }}
-            className="hidden sm:flex hover:bg-muted hover:text-foreground transition-colors"
+            className="hover:bg-muted hover:text-foreground transition-colors"
           >
             <ArrowLeft style={{ width: "14px", height: "14px" }} />
-            Back to Site
+            <span className="hidden sm:inline">Back to Site</span>
           </Link>
           <Button variant="outline" size="sm" onClick={signOut} className="gap-2">
             <LogOut className="h-4 w-4" />
