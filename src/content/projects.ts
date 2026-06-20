@@ -63,15 +63,15 @@ export const projects: Project[] = [
     gallery: [nnssAsphalt, nnssInternalRoads, equipmentWorks],
   },
   {
-    slug: "nnss-dining-galley",
-    title: "Dining / Galley Construction — NNSS Umuopu",
+    slug: "Wilson-Arab-Yard-Nsukka",
+    title: "Wilson Arab Yard Nsukka",
     client: "Nigerian Navy",
-    location: "NNSS Umuopu, Igbo-Eze North, Enugu State",
+    location: "Wilson Arab Yard Nsukka",
     category: "Buildings",
     status: "Ongoing",
     year: "2025",
     summary:
-      "Ongoing construction of a dining hall and galley block serving the Nigerian Navy Secondary School community at Umuopu.",
+      "Wilson Arab Yard Nsukka  .",
     scope: [
       "Reinforced concrete frame and roof",
       "Kitchen and galley fit-out civils",
@@ -81,15 +81,15 @@ export const projects: Project[] = [
     gallery: [nnssDining, nnssSite],
   },
   {
-    slug: "premier-primary-school",
-    title: "Green Smart Schools — Premier Primary School",
-    client: "Green Smart Schools",
+    slug: "Internal-roads-of-Donald-Place-GRA-Nsukk",
+    title: "Internal roads of Donald Place GRA Nsukka",
+    client: "Donald Place",
     location: "Obollo-Eke, Udenu LGA, Enugu State",
     category: "Buildings",
     status: "Ongoing",
     year: "2025",
     summary:
-      "Ongoing construction of classroom blocks and ancillary buildings for the Premier Primary School under the Green Smart Schools initiative.",
+      "Construction of Internal roads of Donald Place GRA Nsukk.",
     scope: [
       "Foundation and superstructure",
       "Classroom and admin blocks",
@@ -99,15 +99,15 @@ export const projects: Project[] = [
     gallery: [premierSchool, siteWork2],
   },
   {
-    slug: "zoo-estate-road-maintenance",
-    title: "Internal Road Maintenance — Zoo Estate",
-    client: "Zoo Estate, Enugu",
+    slug: "Access-Road-to-Ichi",
+    title: "Access Road to Ichi",
+    client: "Ichi, Enugu",
     location: "Enugu, Enugu State",
     category: "Maintenance",
     status: "Completed",
     year: "2023",
     summary:
-      "Maintenance and resurfacing of internal roads within Zoo Estate, Enugu — restoring trafficability and drainage performance across the estate network.",
+      "Maintenance and resurfacing of internal road to Ichi, Enugu — restoring trafficability and drainage performance across the estate network.",
     scope: [
       "Pothole repair and patching",
       "Drainage cleaning and minor reconstruction",
