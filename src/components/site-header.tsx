@@ -17,13 +17,13 @@ const nav = [
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur">
-      <div className="container-x flex h-16 items-center justify-between">
+    <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur transition-all duration-300">
+      <div className="container-x flex h-20 md:h-24 items-center justify-between transition-all duration-300">
         <Link to="/" className="flex items-center gap-2">
           <img
             src={logoUrl}
             alt={company.shortName}
-            className="h-14 w-auto object-contain"
+            className="h-16 md:h-20 w-auto object-contain transition-transform duration-300 hover:scale-[1.03]"
           />
         </Link>
 

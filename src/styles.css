@@ -1,5 +1,4 @@
-@import "tailwindcss" source(none);
-@source "../src";
+@import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -149,9 +148,9 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: "Epilogue", "Urbanist", ui-sans-serif, system-ui, sans-serif;
-    letter-spacing: -0.02em;
-    font-weight: 600;
+    font-family: "Syne", "Urbanist", ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: -0.01em;
+    font-weight: 700;
   }
 }
 
