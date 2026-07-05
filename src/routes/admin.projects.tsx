@@ -27,11 +27,7 @@ export const Route = createFileRoute("/admin/projects")({
         { name: "scope", label: "Scope items", type: "list", helper: "One per line" },
         { name: "cover_url", label: "Cover image URL", type: "image", helper: "Leave empty to use seeded fallback (when the slug matches one of the seeded projects)." },
         { name: "gallery", label: "Gallery image URLs", type: "list", helper: "One URL per line" },
-<<<<<<< HEAD
         { name: "videos", label: "Videos", type: "video-list", helper: "Format: URL | Title (one per line). Example: /NNSS-UMOPU/WhatsApp Video 2026-07-05 at 15.19.19.mp4 | Hostel Construction Video" },
-=======
-        { name: "videos", label: "Video URLs", type: "list", helper: "One URL per line (e.g. YouTube embed or direct video links)" },
->>>>>>> f673d3d77bfb8b23c66a65f407402d1caddfd9d6
         { name: "order_index", label: "Order", type: "number" },
         { name: "is_published", label: "Published", type: "boolean" },
       ]}
