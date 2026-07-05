@@ -745,6 +745,7 @@ export type Database = {
           summary: string | null
           title: string
           updated_at: string
+          videos: Json | null
           year: string | null
         }
         Insert: {
@@ -763,6 +764,7 @@ export type Database = {
           summary?: string | null
           title: string
           updated_at?: string
+          videos?: Json | null
           year?: string | null
         }
         Update: {
@@ -781,6 +783,7 @@ export type Database = {
           summary?: string | null
           title?: string
           updated_at?: string
+          videos?: Json | null
           year?: string | null
         }
         Relationships: []
