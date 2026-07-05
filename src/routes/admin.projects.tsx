@@ -7,7 +7,7 @@ export const Route = createFileRoute("/admin/projects")({
       table="projects"
       title="Projects"
       description="Portfolio entries."
-      defaultRow={{ slug: "", title: "", client: "", location: "", category: "Roads", status: "Completed", year: "", summary: "", scope: [], cover_url: "", gallery: [], order_index: 0, is_published: true }}
+      defaultRow={{ slug: "", title: "", client: "", location: "", category: "Roads", status: "Completed", year: "", summary: "", scope: [], cover_url: "", gallery: [], videos: [], order_index: 0, is_published: true }}
       listColumns={[
         { name: "title", label: "Title" },
         { name: "category", label: "Category" },
@@ -27,6 +27,7 @@ export const Route = createFileRoute("/admin/projects")({
         { name: "scope", label: "Scope items", type: "list", helper: "One per line" },
         { name: "cover_url", label: "Cover image URL", type: "image", helper: "Leave empty to use seeded fallback (when the slug matches one of the seeded projects)." },
         { name: "gallery", label: "Gallery image URLs", type: "list", helper: "One URL per line" },
+        { name: "videos", label: "Videos", type: "video-list", helper: "Format: URL | Title (one per line). Example: /NNSS-UMOPU/WhatsApp Video 2026-07-05 at 15.19.19.mp4 | Hostel Construction Video" },
         { name: "order_index", label: "Order", type: "number" },
         { name: "is_published", label: "Published", type: "boolean" },
       ]}

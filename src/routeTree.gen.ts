@@ -20,6 +20,7 @@ import { Route as ClientsRouteImport } from './routes/clients'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PortfolioIndexRouteImport } from './routes/portfolio.index'
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
 import { Route as AdminTeamRouteImport } from './routes/admin.team'
@@ -98,6 +99,11 @@ const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioIndexRoute = PortfolioIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => PortfolioRoute,
 } as any)
 const AdminIndexRoute = AdminIndexRouteImport.update({
   id: '/',
@@ -243,6 +249,7 @@ export interface FileRoutesByFullPath {
   '/admin/team': typeof AdminTeamRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/admin/': typeof AdminIndexRoute
+  '/portfolio/': typeof PortfolioIndexRoute
   '/admin/inventory/assets': typeof AdminInventoryAssetsRoute
   '/admin/inventory/consumables': typeof AdminInventoryConsumablesRoute
   '/admin/inventory/locations': typeof AdminInventoryLocationsRoute
@@ -260,7 +267,6 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/credentials': typeof CredentialsRoute
   '/equipment': typeof EquipmentRoute
-  '/portfolio': typeof PortfolioRouteWithChildren
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/staff-access': typeof StaffAccessRoute
@@ -277,6 +283,7 @@ export interface FileRoutesByTo {
   '/admin/team': typeof AdminTeamRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/admin': typeof AdminIndexRoute
+  '/portfolio': typeof PortfolioIndexRoute
   '/admin/inventory/assets': typeof AdminInventoryAssetsRoute
   '/admin/inventory/consumables': typeof AdminInventoryConsumablesRoute
   '/admin/inventory/locations': typeof AdminInventoryLocationsRoute
@@ -314,6 +321,7 @@ export interface FileRoutesById {
   '/admin/team': typeof AdminTeamRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/admin/': typeof AdminIndexRoute
+  '/portfolio/': typeof PortfolioIndexRoute
   '/admin/inventory/assets': typeof AdminInventoryAssetsRoute
   '/admin/inventory/consumables': typeof AdminInventoryConsumablesRoute
   '/admin/inventory/locations': typeof AdminInventoryLocationsRoute
@@ -352,6 +360,7 @@ export interface FileRouteTypes {
     | '/admin/team'
     | '/portfolio/$slug'
     | '/admin/'
+    | '/portfolio/'
     | '/admin/inventory/assets'
     | '/admin/inventory/consumables'
     | '/admin/inventory/locations'
@@ -369,7 +378,6 @@ export interface FileRouteTypes {
     | '/contact'
     | '/credentials'
     | '/equipment'
-    | '/portfolio'
     | '/services'
     | '/sitemap.xml'
     | '/staff-access'
@@ -386,6 +394,7 @@ export interface FileRouteTypes {
     | '/admin/team'
     | '/portfolio/$slug'
     | '/admin'
+    | '/portfolio'
     | '/admin/inventory/assets'
     | '/admin/inventory/consumables'
     | '/admin/inventory/locations'
@@ -422,6 +431,7 @@ export interface FileRouteTypes {
     | '/admin/team'
     | '/portfolio/$slug'
     | '/admin/'
+    | '/portfolio/'
     | '/admin/inventory/assets'
     | '/admin/inventory/consumables'
     | '/admin/inventory/locations'
@@ -525,6 +535,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/portfolio/': {
+      id: '/portfolio/'
+      path: '/'
+      fullPath: '/portfolio/'
+      preLoaderRoute: typeof PortfolioIndexRouteImport
+      parentRoute: typeof PortfolioRoute
     }
     '/admin/': {
       id: '/admin/'
@@ -754,10 +771,12 @@ const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
 
 interface PortfolioRouteChildren {
   PortfolioSlugRoute: typeof PortfolioSlugRoute
+  PortfolioIndexRoute: typeof PortfolioIndexRoute
 }
 
 const PortfolioRouteChildren: PortfolioRouteChildren = {
   PortfolioSlugRoute: PortfolioSlugRoute,
+  PortfolioIndexRoute: PortfolioIndexRoute,
 }
 
 const PortfolioRouteWithChildren = PortfolioRoute._addFileChildren(
