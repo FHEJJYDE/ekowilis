@@ -22,6 +22,8 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/portfolio/$slug")({
+  staleTime: 0,
+  gcTime: 0,
   loader: async ({ params }) => {
     try {
       const { data: dbProject, error } = await supabase
@@ -30,8 +32,9 @@ export const Route = createFileRoute("/portfolio/$slug")({
         .eq("slug", params.slug)
         .maybeSingle();
 
+      const staticProject = projects.find((p) => p.slug === params.slug);
+
       if (error || !dbProject) {
-        const staticProject = projects.find((p) => p.slug === params.slug);
         if (!staticProject) throw notFound();
         return { project: staticProject };
       }
@@ -46,9 +49,9 @@ export const Route = createFileRoute("/portfolio/$slug")({
         year: dbProject.year || "",
         summary: dbProject.summary || "",
         scope: dbProject.scope || [],
-        cover: dbProject.cover_url || "",
-        gallery: dbProject.gallery || [],
-        videos: (dbProject as any).videos || [],
+        cover: dbProject.cover_url || staticProject?.cover || "",
+        gallery: (dbProject.gallery && dbProject.gallery.length > 0) ? dbProject.gallery : (staticProject?.gallery || []),
+        videos: (dbProject as any).videos || staticProject?.videos || [],
       };
 
       return { project: mappedProject };

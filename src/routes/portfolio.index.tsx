@@ -6,6 +6,8 @@ import { GallerySection } from "@/components/gallery-section";
 import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/portfolio/")({
+  staleTime: 0,
+  gcTime: 0,
   loader: async () => {
     try {
       const { data: dbProjects, error } = await supabase
@@ -19,20 +21,23 @@ export const Route = createFileRoute("/portfolio/")({
       }
 
       // Map database schema fields to support frontend properties
-      const mappedList = dbProjects.map((p) => ({
-        slug: p.slug,
-        title: p.title,
-        client: p.client || "",
-        location: p.location || "",
-        category: p.category || "Roads",
-        status: p.status || "Completed",
-        year: p.year || "",
-        summary: p.summary || "",
-        scope: p.scope || [],
-        cover: p.cover_url || "",
-        gallery: p.gallery || [],
-        videos: (p as any).videos || [],
-      }));
+      const mappedList = dbProjects.map((p) => {
+        const staticProj = projects.find((sp) => sp.slug === p.slug);
+        return {
+          slug: p.slug,
+          title: p.title,
+          client: p.client || "",
+          location: p.location || "",
+          category: p.category || "Roads",
+          status: p.status || "Completed",
+          year: p.year || "",
+          summary: p.summary || "",
+          scope: p.scope || [],
+          cover: p.cover_url || staticProj?.cover || "",
+          gallery: (p.gallery && p.gallery.length > 0) ? p.gallery : (staticProj?.gallery || []),
+          videos: (p as any).videos || staticProj?.videos || [],
+        };
+      });
 
       return { projectsList: mappedList };
     } catch (err) {
