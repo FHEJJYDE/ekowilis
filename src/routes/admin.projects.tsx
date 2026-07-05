@@ -27,6 +27,7 @@ export const Route = createFileRoute("/admin/projects")({
         { name: "scope", label: "Scope items", type: "list", helper: "One per line" },
         { name: "cover_url", label: "Cover image URL", type: "image", helper: "Leave empty to use seeded fallback (when the slug matches one of the seeded projects)." },
         { name: "gallery", label: "Gallery image URLs", type: "list", helper: "One URL per line" },
+        { name: "videos", label: "Video URLs", type: "list", helper: "One URL per line (e.g. YouTube embed or direct video links)" },
         { name: "order_index", label: "Order", type: "number" },
         { name: "is_published", label: "Published", type: "boolean" },
       ]}
