@@ -7,7 +7,7 @@ export const Route = createFileRoute("/admin/projects")({
       table="projects"
       title="Projects"
       description="Portfolio entries."
-      defaultRow={{ slug: "", title: "", client: "", location: "", category: "Roads", status: "Completed", year: "", summary: "", scope: [], cover_url: "", gallery: [], order_index: 0, is_published: true }}
+      defaultRow={{ slug: "", title: "", client: "", location: "", category: "Roads", status: "Completed", year: "", summary: "", scope: [], cover_url: "", gallery: [], videos: [], order_index: 0, is_published: true }}
       listColumns={[
         { name: "title", label: "Title" },
         { name: "category", label: "Category" },
