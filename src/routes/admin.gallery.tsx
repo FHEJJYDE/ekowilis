@@ -9,6 +9,7 @@ import { Switch } from "@/components/ui/switch";
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { toast } from "sonner";
 import { Upload, Trash2, Pencil } from "lucide-react";
+import { sanitizeSupabaseUrl } from "@/lib/utils";
 
 export const Route = createFileRoute("/admin/gallery")({
   component: GalleryAdmin,
@@ -82,7 +83,7 @@ function GalleryPanel({ category }: { category: Category }) {
             .createSignedUrl(r.storage_path, 60 * 60);
           return { ...r, signedUrl: s?.signedUrl };
         }
-        return { ...r, signedUrl: r.image_url };
+        return { ...r, signedUrl: sanitizeSupabaseUrl(r.image_url) };
       }),
     );
     setRows(withUrls);

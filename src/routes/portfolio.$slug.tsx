@@ -20,6 +20,7 @@ import { projects, type Project } from "@/content/projects";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { supabase } from "@/integrations/supabase/client";
+import { sanitizeSupabaseUrl } from "@/lib/utils";
 
 export const Route = createFileRoute("/portfolio/$slug")({
   staleTime: 0,
@@ -49,9 +50,13 @@ export const Route = createFileRoute("/portfolio/$slug")({
         year: dbProject.year || "",
         summary: dbProject.summary || "",
         scope: dbProject.scope || [],
-        cover: dbProject.cover_url || staticProject?.cover || "",
-        gallery: (dbProject.gallery && dbProject.gallery.length > 0) ? dbProject.gallery : (staticProject?.gallery || []),
-        videos: (dbProject as any).videos || staticProject?.videos || [],
+        cover: sanitizeSupabaseUrl(dbProject.cover_url || staticProject?.cover || ""),
+        gallery: sanitizeSupabaseUrl((dbProject.gallery && dbProject.gallery.length > 0) ? dbProject.gallery : (staticProject?.gallery || [])),
+        videos: ((dbProject as any).videos || staticProject?.videos || []).map((v: any) => ({
+          ...v,
+          url: sanitizeSupabaseUrl(v.url),
+          thumbnail: v.thumbnail ? sanitizeSupabaseUrl(v.thumbnail) : undefined,
+        })),
       };
 
       return { project: mappedProject };

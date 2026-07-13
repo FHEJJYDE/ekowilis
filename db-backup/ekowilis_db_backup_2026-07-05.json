@@ -1,0 +1,875 @@
+{
+  "admin_emails": [
+    {
+      "email": "support.ekowillis@gmail.com",
+      "created_at": "2026-06-11T14:20:27.49624+00:00"
+    },
+    {
+      "email": "ekowilogs@gmail.com",
+      "created_at": "2026-06-13T11:55:59.628572+00:00"
+    }
+  ],
+  "clients": [
+    {
+      "id": "5c9a0a7c-f041-4108-a223-a0f17b8b714c",
+      "name": "Enugu State Government",
+      "sector": "Public sector",
+      "logo_url": "",
+      "order_index": 1,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "acffddd0-a14a-4012-9388-137bc8be735f",
+      "name": "Rivers State Government",
+      "sector": "Public sector",
+      "logo_url": "",
+      "order_index": 2,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "6d3839a3-d4e1-4b16-83c3-1b10852b7cdd",
+      "name": "Akwa Ibom State Government",
+      "sector": "Public sector",
+      "logo_url": "",
+      "order_index": 3,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "f9b6aad3-8ec9-4c96-9f06-05e1e74c1f12",
+      "name": "FERMA",
+      "sector": "Federal agency",
+      "logo_url": "",
+      "order_index": 4,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "b4cefaa5-4108-4192-8a95-743a3b4a1612",
+      "name": "NDDC",
+      "sector": "Federal agency",
+      "logo_url": "",
+      "order_index": 5,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "c179a4bb-cb33-4f43-9da8-0226ba0de5c7",
+      "name": "Nigerian Navy",
+      "sector": "Defence",
+      "logo_url": "",
+      "order_index": 6,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "70d1da9c-a5a6-417b-85d7-c7a5b0087cc8",
+      "name": "Agip Nigeria",
+      "sector": "Oil & gas",
+      "logo_url": "",
+      "order_index": 7,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "fda5dc36-aa03-4213-a9cd-b4bc751e48b2",
+      "name": "Orascom-Tinapa",
+      "sector": "Private sector",
+      "logo_url": "",
+      "order_index": 8,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "4fabe2e6-11da-47f7-9b12-2d8d62b0b581",
+      "name": "Prodeco Nigeria",
+      "sector": "Private sector",
+      "logo_url": "",
+      "order_index": 9,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "73b425b3-3ce9-4cbe-b418-7005b0d0fc88",
+      "name": "Private Estate W.A.",
+      "sector": "Private sector",
+      "logo_url": "",
+      "order_index": 10,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "58e3d5ea-9192-4d87-aa22-10aa04401dd0",
+      "name": "Wilson Nig",
+      "sector": "Private sector",
+      "logo_url": "",
+      "order_index": 11,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "b910de6c-0c68-48fc-9c3d-0ebc27367de5",
+      "name": "Ferotex Construction",
+      "sector": "Private sector",
+      "logo_url": "",
+      "order_index": 12,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "aeaf7ea0-38ae-41ef-8af6-edca334ded6f",
+      "name": "Peace Mass Transit",
+      "sector": "Transport",
+      "logo_url": "",
+      "order_index": 13,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "36de0fcc-acca-445a-908a-05e7adec84b1",
+      "name": "ESHDC",
+      "sector": "Public sector",
+      "logo_url": "",
+      "order_index": 14,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "e6f219a9-bf31-4dcb-b14d-9a2442abfd78",
+      "name": "ESUBEB",
+      "sector": "Public sector",
+      "logo_url": "",
+      "order_index": 15,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    }
+  ],
+  "credentials": [
+    {
+      "id": "68370664-bb99-4e8a-9fa1-69ed3e9f7010",
+      "title": "CAC Certificate of Incorporation",
+      "reference": "RC 797482",
+      "issuer": "Corporate Affairs Commission",
+      "year": "2009",
+      "document_url": "",
+      "order_index": 1,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "2cd8855f-f363-4dbf-8597-35cac2815b56",
+      "title": "Tax Clearance Certificate",
+      "reference": "TCC 225189456945",
+      "issuer": "FIRS",
+      "year": "Current",
+      "document_url": "",
+      "order_index": 2,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "cce8f802-79b7-4b84-bf16-51ded0b937cb",
+      "title": "FIRS Taxpayer Identification Number",
+      "reference": "TIN",
+      "issuer": "FIRS",
+      "year": "Current",
+      "document_url": "",
+      "order_index": 3,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "6ee9568a-80ee-4918-923d-3af7d2937ee1",
+      "title": "NSITF ECS Clearance",
+      "reference": "",
+      "issuer": "Nigerian Social Insurance Trust Fund",
+      "year": "Current",
+      "document_url": "",
+      "order_index": 4,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "c6cc1ca8-67e8-4701-ad67-7815665b3d8c",
+      "title": "PenCom Pension Compliance",
+      "reference": "",
+      "issuer": "National Pension Commission",
+      "year": "Current",
+      "document_url": "",
+      "order_index": 5,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "d62ac58b-7403-4e74-98fe-b8b807fb7969",
+      "title": "BPP Registration",
+      "reference": "",
+      "issuer": "Bureau of Public Procurement",
+      "year": "Current",
+      "document_url": "",
+      "order_index": 6,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "831e9058-64b5-4b90-8524-87792cc8be32",
+      "title": "ITF Compliance",
+      "reference": "",
+      "issuer": "Industrial Training Fund",
+      "year": "Current",
+      "document_url": "",
+      "order_index": 7,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    }
+  ],
+  "media_assets": [
+    {
+      "id": "3c9b9eea-ee97-4dbb-917a-2e5c6b9c48a9",
+      "storage_path": "2026/0aa27e81-b29a-41bb-8e75-c42c6f1f00ff-WhatsApp_Image_2026-07-05_at_15.16.02.jpeg",
+      "public_url": "https://ysmwaiulrjwgzeislweb.supabase.co/storage/v1/object/public/media/2026/0aa27e81-b29a-41bb-8e75-c42c6f1f00ff-WhatsApp_Image_2026-07-05_at_15.16.02.jpeg",
+      "filename": "WhatsApp Image 2026-07-05 at 15.16.02.jpeg",
+      "mime_type": "image/jpeg",
+      "size_bytes": 60412,
+      "uploaded_by": "f09cecb6-156d-41a6-8dc8-5a6891ea572a",
+      "created_at": "2026-07-05T22:05:27.802556+00:00"
+    },
+    {
+      "id": "0e486667-b842-4e9c-9068-6ead457face5",
+      "storage_path": "2026/6f5d4dd3-ec58-4b94-b409-71783011c559-WhatsApp_Image_2026-07-05_at_15.16.03.jpeg",
+      "public_url": "https://ysmwaiulrjwgzeislweb.supabase.co/storage/v1/object/public/media/2026/6f5d4dd3-ec58-4b94-b409-71783011c559-WhatsApp_Image_2026-07-05_at_15.16.03.jpeg",
+      "filename": "WhatsApp Image 2026-07-05 at 15.16.03.jpeg",
+      "mime_type": "image/jpeg",
+      "size_bytes": 86341,
+      "uploaded_by": "f09cecb6-156d-41a6-8dc8-5a6891ea572a",
+      "created_at": "2026-07-05T22:05:28.881338+00:00"
+    },
+    {
+      "id": "b1320b5c-ffa6-4c75-ba7b-b5f568dd710c",
+      "storage_path": "2026/f926db6f-bdb1-429c-ac3c-0df40fbdf3e2-WhatsApp_Image_2026-07-05_at_15.16.05.jpeg",
+      "public_url": "https://ysmwaiulrjwgzeislweb.supabase.co/storage/v1/object/public/media/2026/f926db6f-bdb1-429c-ac3c-0df40fbdf3e2-WhatsApp_Image_2026-07-05_at_15.16.05.jpeg",
+      "filename": "WhatsApp Image 2026-07-05 at 15.16.05.jpeg",
+      "mime_type": "image/jpeg",
+      "size_bytes": 89941,
+      "uploaded_by": "f09cecb6-156d-41a6-8dc8-5a6891ea572a",
+      "created_at": "2026-07-05T22:05:29.777889+00:00"
+    },
+    {
+      "id": "13875f4e-a1ee-401c-ab24-7d4354c3daa2",
+      "storage_path": "2026/a67e7563-e35c-4ad5-a17c-e8579850a3d0-WhatsApp_Image_2026-07-05_at_15.16.06.jpeg",
+      "public_url": "https://ysmwaiulrjwgzeislweb.supabase.co/storage/v1/object/public/media/2026/a67e7563-e35c-4ad5-a17c-e8579850a3d0-WhatsApp_Image_2026-07-05_at_15.16.06.jpeg",
+      "filename": "WhatsApp Image 2026-07-05 at 15.16.06.jpeg",
+      "mime_type": "image/jpeg",
+      "size_bytes": 87193,
+      "uploaded_by": "f09cecb6-156d-41a6-8dc8-5a6891ea572a",
+      "created_at": "2026-07-05T22:05:30.738434+00:00"
+    }
+  ],
+  "team_members": [
+    {
+      "id": "f3862e26-f33b-446e-933b-a50c0ab6e407",
+      "name": "Engr. Itodo Williams Ejike",
+      "role": "Managing Director / CEO",
+      "group_name": "board",
+      "photo_url": "",
+      "order_index": 1,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "193d7f65-1218-49b3-8f1f-91ff2150e0a1",
+      "name": "Mrs. Ngozi Ejike",
+      "role": "Executive Director",
+      "group_name": "board",
+      "photo_url": "",
+      "order_index": 2,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "2f5c1b55-a158-47a8-bcc0-70a7e3639c76",
+      "name": "Engr. Chidi Okwor",
+      "role": "Director",
+      "group_name": "board",
+      "photo_url": "",
+      "order_index": 3,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "82904e8b-b423-4909-802e-ee2e23057315",
+      "name": "Mr. Emeka Nnaji",
+      "role": "Director",
+      "group_name": "board",
+      "photo_url": "",
+      "order_index": 4,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "60960e7f-d594-4279-9b4a-04c63eab5c8a",
+      "name": "Mrs. Adaeze Eze",
+      "role": "Director",
+      "group_name": "board",
+      "photo_url": "",
+      "order_index": 5,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "9c9fd877-815f-4464-bc4c-7440daffc55a",
+      "name": "Mr. Uche Obi",
+      "role": "Director",
+      "group_name": "board",
+      "photo_url": "",
+      "order_index": 6,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "296bbd80-fa45-4b28-9c6c-2a661bf0d258",
+      "name": "Engr. Samuel Ani",
+      "role": "Project Manager",
+      "group_name": "management",
+      "photo_url": "",
+      "order_index": 10,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "b8be2aba-157a-4d75-bb16-6d668ea298d9",
+      "name": "Mr. Kingsley Onah",
+      "role": "Finance Manager",
+      "group_name": "management",
+      "photo_url": "",
+      "order_index": 11,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "9cd6ed26-9781-4331-97ed-69bcb82d27fc",
+      "name": "Mrs. Chioma Eze",
+      "role": "HR Manager",
+      "group_name": "management",
+      "photo_url": "",
+      "order_index": 12,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "5539d12f-de24-491f-82f3-7fea2461986c",
+      "name": "Engr. Paul Ugwu",
+      "role": "Site Engineer",
+      "group_name": "staff",
+      "photo_url": "",
+      "order_index": 20,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "79f09b55-8612-4a1d-966f-e11d48db82f7",
+      "name": "Mr. Innocent Okeke",
+      "role": "Site Engineer",
+      "group_name": "staff",
+      "photo_url": "",
+      "order_index": 21,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "a55c9114-02ee-4939-ad4f-4f7ef8c9b8a2",
+      "name": "Mr. Tony Ndu",
+      "role": "Quantity Surveyor",
+      "group_name": "staff",
+      "photo_url": "",
+      "order_index": 22,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "37343c12-4c92-4052-a211-e8c013bffea7",
+      "name": "Mr. Ifeanyi Eze",
+      "role": "Procurement Officer",
+      "group_name": "staff",
+      "photo_url": "",
+      "order_index": 23,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "a2d3fc6b-ce5d-4ebc-b180-1f6c62ccff59",
+      "name": "Mr. Sunday Agu",
+      "role": "Fleet Supervisor",
+      "group_name": "staff",
+      "photo_url": "",
+      "order_index": 24,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "a4694bd8-7a77-4caa-aead-d0d67d5bdb05",
+      "name": "Mr. Obinna Ali",
+      "role": "Workshop Foreman",
+      "group_name": "staff",
+      "photo_url": "",
+      "order_index": 25,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "02cc0025-e515-437e-9fcc-ef2eec42ac28",
+      "name": "Ms. Blessing Nwosu",
+      "role": "Admin Officer",
+      "group_name": "staff",
+      "photo_url": "",
+      "order_index": 26,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    }
+  ],
+  "projects": [
+    {
+      "id": "302b7513-064f-4161-a614-5a4cd9e16602",
+      "slug": "nnss-male-hostel",
+      "title": "Male Hostel — Nigerian Navy Secondary School",
+      "client": "Nigerian Navy",
+      "location": "NNSS Umuopu, Igbo-Eze North, Enugu State",
+      "category": "Buildings",
+      "status": "Completed",
+      "year": "2024-2025",
+      "summary": "Design and construction of a male hostel block at NNSS Umuopu, delivered under a Naval Headquarters contract.",
+      "scope": [
+        "Substructure and reinforced concrete frame",
+        "Block-work, plastering and finishes",
+        "Roof, doors, windows and joinery",
+        "Plumbing, electrical and external works"
+      ],
+      "cover_url": "",
+      "gallery": [],
+      "order_index": 1,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00",
+      "videos": []
+    },
+    {
+      "id": "4a44abc1-c2cf-4b3e-a13a-fb1a660490e9",
+      "slug": "premier-primary-school",
+      "title": "Green Smart Schools — Premier Primary School",
+      "client": "Green Smart Schools",
+      "location": "Obollo-Eke, Udenu LGA, Enugu State",
+      "category": "Buildings",
+      "status": "Ongoing",
+      "year": "2025",
+      "summary": "Construction of classroom blocks and ancillary buildings under the Green Smart Schools initiative.",
+      "scope": [
+        "Foundation and superstructure",
+        "Classroom and admin blocks",
+        "Finishes and external works"
+      ],
+      "cover_url": "",
+      "gallery": [],
+      "order_index": 4,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00",
+      "videos": []
+    },
+    {
+      "id": "395a003c-613f-4baf-ae58-2f825b565cef",
+      "slug": "zoo-estate-road-maintenance",
+      "title": "Internal Road Maintenance — Zoo Estate",
+      "client": "Zoo Estate, Enugu",
+      "location": "Enugu, Enugu State",
+      "category": "Maintenance",
+      "status": "Completed",
+      "year": "2023",
+      "summary": "Maintenance and resurfacing of internal roads within Zoo Estate, Enugu.",
+      "scope": [
+        "Pothole repair and patching",
+        "Drainage cleaning and minor reconstruction",
+        "Surface dressing"
+      ],
+      "cover_url": "",
+      "gallery": [],
+      "order_index": 5,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00",
+      "videos": []
+    },
+    {
+      "id": "cd2cff09-88f3-4912-ae32-d78f392eb02e",
+      "slug": "nnss-dining-galley",
+      "title": "Dining / Galley Construction — NNSS Umuopu",
+      "client": "Nigerian Navy",
+      "location": "NNSS Umuopu, Igbo-Eze North, Enugu State",
+      "category": "Buildings",
+      "status": "Completed ",
+      "year": "2025",
+      "summary": "Ongoing construction of a dining hall and galley block serving the Nigerian Navy Secondary School community.",
+      "scope": [
+        "Reinforced concrete frame and roof",
+        "Kitchen and galley fit-out civils",
+        "Finishes, services and external works"
+      ],
+      "cover_url": "",
+      "gallery": [],
+      "order_index": 3,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-30T07:47:28.200968+00:00",
+      "videos": []
+    },
+    {
+      "id": "da043371-7ba6-4d42-861d-5c33c8bd6419",
+      "slug": "ens-mowi-2024",
+      "title": "Enugu State Ministry of Works Contract — 2024",
+      "client": "Enugu State Ministry of Works & Infrastructure",
+      "location": "Enugu State",
+      "category": "Roads",
+      "status": "Completed ",
+      "year": "2024",
+      "summary": "Civil works contract awarded by the Enugu State Government under offer letter ENS/MOW&I/PRS/S.R.1/VOL.X/229.",
+      "scope": [
+        "Road and drainage works as per contract scope",
+        "Compliance with Enugu State Standard Contract Agreement"
+      ],
+      "cover_url": "",
+      "gallery": [],
+      "order_index": 6,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-30T07:48:08.723331+00:00",
+      "videos": []
+    },
+    {
+      "id": "60cf45a3-6ee4-4300-8625-fa2ae09d4358",
+      "slug": "Igogoro okpo Amaji access roads",
+      "title": "Igogoro Okpo Amaja Road ",
+      "client": "Enugu State Ministry of Works & Infrastructure",
+      "location": "Enugu Ezike ",
+      "category": "Roads",
+      "status": "On going ",
+      "year": "2026",
+      "summary": "",
+      "scope": [],
+      "cover_url": "",
+      "gallery": [],
+      "order_index": 0,
+      "is_published": true,
+      "created_at": "2026-06-30T07:52:15.877659+00:00",
+      "updated_at": "2026-06-30T07:54:59.645872+00:00",
+      "videos": []
+    },
+    {
+      "id": "9e1636a8-5b3e-4938-bb4d-354545b26d79",
+      "slug": "nnss-internal-roads",
+      "title": "Asphalted Internal Roads with Drainage — NNSS Umuopu",
+      "client": "Nigerian Navy",
+      "location": "NNSS Umuopu, Igbo-Eze North, Enugu State",
+      "category": "Roads",
+      "status": "Completed",
+      "year": "2024",
+      "summary": "Construction of asphalted internal roads with reinforced concrete drainage at the Nigerian Navy Secondary School campus.",
+      "scope": [
+        "Site clearance and earthworks",
+        "Sub-base and base course",
+        "Asphalt wearing course",
+        "Reinforced concrete drainage and culverts"
+      ],
+      "cover_url": "",
+      "gallery": [
+        "https://ysmwaiulrjwgzeislweb.supabase.co/storage/v1/object/public/media/2026/cc513cd4-106c-40c3-abf2-dd0e45af4594-WhatsApp_Image_2026-07-05_at_15.18.36.jpeg",
+        "https://ysmwaiulrjwgzeislweb.supabase.co/storage/v1/object/public/media/2026/8ed960f8-f52d-47cb-acb5-d2eca1ca8aa2-WhatsApp_Image_2026-07-05_at_15.19.27__1_.jpeg",
+        "https://ysmwaiulrjwgzeislweb.supabase.co/storage/v1/object/public/media/2026/c26f1fec-72ea-4a1b-aee3-9626c009d56a-WhatsApp_Image_2026-07-05_at_15.19.27.jpeg",
+        "https://ysmwaiulrjwgzeislweb.supabase.co/storage/v1/object/public/media/2026/810d8562-96aa-4dc5-b97c-f6d3e1db5cfb-WhatsApp_Image_2026-07-05_at_15.19.28.jpeg",
+        "https://ysmwaiulrjwgzeislweb.supabase.co/storage/v1/object/public/media/2026/50a78cf6-0bac-459f-ad93-b4c0c127f11e-WhatsApp_Image_2026-07-05_at_15.19.29.jpeg"
+      ],
+      "order_index": 2,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-07-05T20:30:33.321076+00:00",
+      "videos": []
+    },
+    {
+      "id": "73e83c32-8ead-4101-8766-4eef3ee4222f",
+      "slug": "willson-college",
+      "title": "WILLSON COLLEGE",
+      "client": "WILLSON COLLEGE",
+      "location": "",
+      "category": "Roads",
+      "status": "Completed",
+      "year": "2026",
+      "summary": "",
+      "scope": [],
+      "cover_url": "https://ysmwaiulrjwgzeislweb.supabase.co/storage/v1/object/public/media/2026/661df2c8-0f25-43ba-a221-2510f5d4df00-WhatsApp_Image_2026-07-05_at_15.16.02.jpeg",
+      "gallery": [
+        "https://ysmwaiulrjwgzeislweb.supabase.co/storage/v1/object/public/media/2026/0826bbb3-dda5-491a-bee9-8114f5af5c08-WhatsApp_Image_2026-07-05_at_15.16.02.jpeg",
+        "https://ysmwaiulrjwgzeislweb.supabase.co/storage/v1/object/public/media/2026/8865a0a7-fc87-4a95-8647-7c8474fc5f44-WhatsApp_Image_2026-07-05_at_15.16.03.jpeg",
+        "https://ysmwaiulrjwgzeislweb.supabase.co/storage/v1/object/public/media/2026/3dd90b50-e7f0-45e5-ba3a-cc091d3dc407-WhatsApp_Image_2026-07-05_at_15.16.05.jpeg",
+        "https://ysmwaiulrjwgzeislweb.supabase.co/storage/v1/object/public/media/2026/bd1990c9-3c2e-46ec-b5c8-48b436ef4e3d-WhatsApp_Image_2026-07-05_at_15.16.06.jpeg"
+      ],
+      "order_index": 1,
+      "is_published": true,
+      "created_at": "2026-07-05T20:32:28.0037+00:00",
+      "updated_at": "2026-07-05T22:08:47.350883+00:00",
+      "videos": []
+    }
+  ],
+  "services": [
+    {
+      "id": "521e2ee3-0639-4c02-aa15-124c6feb1abf",
+      "slug": "building-construction",
+      "title": "Building Construction",
+      "summary": "Design and construction of residential, institutional and commercial buildings.",
+      "description": "",
+      "icon": "Building2",
+      "order_index": 1,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "a37cfdf9-1003-451f-82d1-fe5ca56e473c",
+      "slug": "road-construction",
+      "title": "Road Construction",
+      "summary": "Asphalt and concrete roads — earthworks through wearing course.",
+      "description": "",
+      "icon": "Route",
+      "order_index": 2,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "8a6b002a-f167-4d2a-b021-0fb4ef013670",
+      "slug": "drainage",
+      "title": "Drainage Systems",
+      "summary": "Reinforced concrete drains, culverts and stormwater management.",
+      "description": "",
+      "icon": "Waves",
+      "order_index": 3,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "8dbc24e7-9dd3-4c4a-8177-1d43c8192fb9",
+      "slug": "pond-construction",
+      "title": "Pond Construction",
+      "summary": "Earthen and concrete-lined ponds for agriculture and water storage.",
+      "description": "",
+      "icon": "Droplet",
+      "order_index": 4,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "8013101b-0b2b-4623-81cb-0250a4900fa7",
+      "slug": "ridges",
+      "title": "Ridges",
+      "summary": "Land preparation and ridging for large-scale farming projects.",
+      "description": "",
+      "icon": "Mountain",
+      "order_index": 5,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "70c14126-5bdc-40a6-b9f5-2dab2cf79c24",
+      "slug": "maintenance",
+      "title": "Maintenance Services",
+      "summary": "Routine and periodic maintenance of roads, drains and estate infrastructure.",
+      "description": "",
+      "icon": "Wrench",
+      "order_index": 6,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "c960b824-cf31-42a1-b0d0-3212907be0b4",
+      "slug": "equipment-leasing",
+      "title": "Equipment & Vehicle Leasing",
+      "summary": "Lease our excavators, graders, rollers, tippers and support vehicles.",
+      "description": "",
+      "icon": "Truck",
+      "order_index": 7,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    },
+    {
+      "id": "bd4d9f04-f6a9-4aae-bf3a-1b27752bd00e",
+      "slug": "procurement",
+      "title": "Procurement",
+      "summary": "Sourcing of construction materials and equipment for projects across Nigeria.",
+      "description": "",
+      "icon": "Package",
+      "order_index": 8,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-11T14:21:52.008661+00:00"
+    }
+  ],
+  "equipment": [
+    {
+      "id": "7615fc27-3f60-45ee-9614-32119cbe3e41",
+      "name": "Caterpillar Excavator",
+      "category": "Earth-moving",
+      "description": "Tracked hydraulic excavator for bulk excavation, trenching and loading.",
+      "image_url": "",
+      "quantity": 10,
+      "order_index": 2,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-30T07:56:45.5624+00:00"
+    },
+    {
+      "id": "6daf6634-151e-47e5-823a-9f3165dbfaf1",
+      "name": "Motor Grader",
+      "category": "Earth-moving",
+      "description": "For fine grading of road sub-base and base course.",
+      "image_url": "",
+      "quantity": 7,
+      "order_index": 2,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-30T07:57:08.537315+00:00"
+    },
+    {
+      "id": "17e22edd-3b4f-435c-87e8-1a773f629777",
+      "name": "Vibratory Roller",
+      "category": "Compaction",
+      "description": "Single-drum vibratory roller for sub-base and asphalt compaction.",
+      "image_url": "",
+      "quantity": 5,
+      "order_index": 3,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-30T07:57:25.179595+00:00"
+    },
+    {
+      "id": "a09111b6-239a-4dae-9df8-7e27f1aa106c",
+      "name": "Tipper Truck",
+      "category": "Haulage",
+      "description": "10-tonne tipper trucks for material haulage to and from site.",
+      "image_url": "",
+      "quantity": 18,
+      "order_index": 4,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-30T07:57:52.630012+00:00"
+    },
+    {
+      "id": "ae31b45a-92d7-42e2-947f-f400a70c51db",
+      "name": "Wheel Loader",
+      "category": "Earth-moving",
+      "description": "Front-end loader for stockpiling and truck loading.",
+      "image_url": "",
+      "quantity": 5,
+      "order_index": 1,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-30T07:58:21.036294+00:00"
+    },
+    {
+      "id": "ec1b6a79-0f67-4426-920b-c8127446fd91",
+      "name": "Concrete Mixer",
+      "category": "Concrete",
+      "description": "Diesel concrete mixers for on-site batching.",
+      "image_url": "",
+      "quantity": 20,
+      "order_index": 6,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-30T07:58:39.187432+00:00"
+    },
+    {
+      "id": "0a90ca4d-efaa-4ce6-8bcd-00cfee7da8c8",
+      "name": "Water Tanker",
+      "category": "Support",
+      "description": "10,000-litre water tankers for compaction and dust control.",
+      "image_url": "",
+      "quantity": 5,
+      "order_index": 7,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-30T07:58:58.561541+00:00"
+    },
+    {
+      "id": "c96cc070-7746-4da1-aff5-e57bc29a0adb",
+      "name": "Bulldozer",
+      "category": "Earth-moving",
+      "description": "Crawler dozer for site clearance and bulk earthworks.",
+      "image_url": "",
+      "quantity": 10,
+      "order_index": 2,
+      "is_published": true,
+      "created_at": "2026-06-11T14:21:52.008661+00:00",
+      "updated_at": "2026-06-30T07:59:20.79417+00:00"
+    }
+  ],
+  "inventory_locations": [],
+  "assets": [],
+  "quote_submissions": [
+    {
+      "id": "4024e3f4-60db-44b0-9499-740aea88e20c",
+      "name": "Ajuluchukwu Ejiribeofor",
+      "email": "ajuluchukwue@gmail.com",
+      "phone": "07037572560",
+      "project_type": "road-construction",
+      "location": "Delta ",
+      "scope": "",
+      "timeline": "",
+      "budget": "",
+      "message": "From Earth work to asphalt level ",
+      "is_read": false,
+      "created_at": "2026-06-30T08:06:31.706207+00:00"
+    }
+  ],
+  "contact_submissions": []
+}

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
+import { sanitizeSupabaseUrl } from "@/lib/utils";
 
 type Row = {
   id: string;
@@ -37,18 +38,14 @@ export function GallerySection({
         .order("order_index", { ascending: true })
         .order("created_at", { ascending: false });
       const rows = (data ?? []) as unknown as Row[];
-      const withUrls = await Promise.all(
-        rows.map(async (r) => {
-          let displayUrl = r.image_url;
-          if (r.storage_path) {
-            const { data: s } = await supabase.storage
-              .from("media")
-              .createSignedUrl(r.storage_path, 60 * 60);
-            if (s?.signedUrl) displayUrl = s.signedUrl;
-          }
-          return { ...r, displayUrl };
-        }),
-      );
+      const withUrls = rows.map((r) => {
+        let displayUrl = r.image_url;
+        if (r.storage_path) {
+          const { data: pub } = supabase.storage.from("media").getPublicUrl(r.storage_path);
+          displayUrl = pub.publicUrl;
+        }
+        return { ...r, displayUrl: sanitizeSupabaseUrl(displayUrl) };
+      });
       if (!cancelled) {
         setItems(withUrls);
         setLoading(false);

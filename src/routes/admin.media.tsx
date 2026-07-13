@@ -4,6 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { Upload, Copy, Trash2 } from "lucide-react";
+import { sanitizeSupabaseUrl } from "@/lib/utils";
 
 export const Route = createFileRoute("/admin/media")({
   component: MediaLibrary,
@@ -91,7 +92,7 @@ function MediaLibrary() {
   }
 
   async function copyUrl(a: Asset) {
-    const url = a.signedUrl ?? a.public_url;
+    const url = sanitizeSupabaseUrl(a.signedUrl ?? a.public_url);
     await navigator.clipboard.writeText(url);
     toast.success("URL copied (1-hour signed link)");
   }
