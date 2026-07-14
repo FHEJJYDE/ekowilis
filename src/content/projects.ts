@@ -100,15 +100,15 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "Wilson-Arab-Yard-Nsukka",
-    title: "Wilson Arab Yard Nsukka",
+    slug: "nnss-dining-galley",
+    title: "Dining / Galley Construction — NNSS Umuopu",
     client: "Nigerian Navy",
-    location: "Wilson Arab Yard Nsukka",
+    location: "NNSS Umuopu, Igbo-Eze North, Enugu State",
     category: "Buildings",
-    status: "Ongoing",
+    status: "Completed",
     year: "2025",
     summary:
-      "Wilson Arab Yard Nsukka construction and site development.",
+      "Ongoing construction of a dining hall and galley block serving the Nigerian Navy Secondary School community.",
     scope: [
       "Reinforced concrete frame and roof",
       "Kitchen and galley fit-out civils",
@@ -125,15 +125,15 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "Internal-roads-of-Donald-Place-GRA-Nsukk",
-    title: "Internal roads of Donald Place GRA Nsukka",
-    client: "Donald Place",
+    slug: "premier-primary-school",
+    title: "Green Smart Schools — Premier Primary School",
+    client: "Enugu State Government",
     location: "Obollo-Eke, Udenu LGA, Enugu State",
     category: "Buildings",
     status: "Ongoing",
     year: "2025",
     summary:
-      "Construction of Internal roads of Donald Place GRA Nsukk.",
+      "Construction of classroom blocks and ancillary buildings under the Green Smart Schools initiative.",
     scope: [
       "Foundation and superstructure",
       "Classroom and admin blocks",
@@ -143,15 +143,15 @@ export const projects: Project[] = [
     gallery: [premierSchool, siteWork2],
   },
   {
-    slug: "Access-Road-to-Ichi",
-    title: "Access Road to Ichi",
-    client: "Ichi, Enugu",
+    slug: "zoo-estate-road-maintenance",
+    title: "Internal Road Maintenance — Zoo Estate",
+    client: "Zoo Estate, Enugu",
     location: "Enugu, Enugu State",
     category: "Maintenance",
     status: "Completed",
     year: "2023",
     summary:
-      "Maintenance and resurfacing of internal road to Ichi, Enugu — restoring trafficability and drainage performance across the estate network.",
+      "Maintenance and resurfacing of internal roads within Zoo Estate, Enugu — restoring trafficability and drainage performance across the estate network.",
     scope: [
       "Pothole repair and patching",
       "Drainage cleaning and minor reconstruction",
@@ -176,5 +176,46 @@ export const projects: Project[] = [
     ],
     cover: equipmentWorks,
     gallery: [equipmentWorks, siteWork2],
+  },
+  {
+    slug: "willson-college",
+    title: "WILLSON COLLEGE",
+    client: "WILLSON COLLEGE",
+    location: "Enugu State",
+    category: "Roads",
+    status: "Completed",
+    year: "2026",
+    summary:
+      "WILLSON COLLEGE road, drainage and site grading works.",
+    scope: [
+      "Site clearance and grading",
+      "Drainage construction",
+      "Asphalt surfacing",
+    ],
+    cover: "/Willsons-college/WhatsApp Image 2026-07-05 at 15.16.02.jpeg",
+    gallery: [
+      "/Willsons-college/WhatsApp Image 2026-07-05 at 15.16.02.jpeg",
+      "/Willsons-college/WhatsApp Image 2026-07-05 at 15.16.03.jpeg",
+      "/Willsons-college/WhatsApp Image 2026-07-05 at 15.16.05.jpeg",
+      "/Willsons-college/WhatsApp Image 2026-07-05 at 15.16.06.jpeg",
+    ],
+  },
+  {
+    slug: "Igogoro okpo Amaji access roads",
+    title: "Igogoro Okpo Amaja Road",
+    client: "Enugu State Ministry of Works & Infrastructure",
+    location: "Enugu Ezike",
+    category: "Roads",
+    status: "Ongoing",
+    year: "2026",
+    summary:
+      "Access road construction and paving works connecting Igogoro, Okpo, and Amaja.",
+    scope: [
+      "Earthworks and base stabilization",
+      "Concrete drainage channels",
+      "Access paving",
+    ],
+    cover: siteWork1,
+    gallery: [siteWork1],
   },
 ];
